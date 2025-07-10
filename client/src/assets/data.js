@@ -12,11 +12,12 @@ import GearSix from "../assets/GearSix.png";
 import smLogo from "../assets/smLogo.png";
 import sidebar from "../assets/sidebar.png";
 import yt from "../assets/yt.png";
+import sale from "../assets/sale.png";
 import logout from "../assets/logout.png";
 import loginImageForSm from "../assets/loginImageForSm.jpg";
 
 export const assets = {
-    insta,smLogo,
+    insta,smLogo,sale,
     loginImage,logout,
     logo,store,loans,userGear,window,shopping,GearSix,
     sidebar,

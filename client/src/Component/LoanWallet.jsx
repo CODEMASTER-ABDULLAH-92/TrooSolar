@@ -1,0 +1,53 @@
+import { Eye } from 'lucide-react';
+import React from 'react';
+
+const LoanWallet = () => {
+  return (
+    <div className="bg-[#273e8e] rounded-lg px-4 py-2 text-white shadow-md w-full max-w-md">
+      {/* Header: Label & Icon */}
+      <div className="flex justify-between items-center mb-2">
+        <p className="text-white/70 text-sm">Loan Wallet</p>
+        <div className="bg-[#1d3073] h-7 w-7 rounded-md flex items-center justify-center">
+          <Eye size={18} className="text-white/70 cursor-pointer" />
+        </div>
+      </div>
+
+      {/* Balance */}
+      <h1 className="text-xl font-extrabold mb-3">N2,000,000</h1>
+
+      {/* Loan Info + Countdown */}
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-[#1d3073] py-3 px-3 rounded-md gap-3">
+        {/* Loan Info */}
+        <div className="flex flex-col text-sm leading-tight">
+          <p className="text-white/80">You have no loans</p>
+          <p className="text-white">-</p>
+        </div>
+
+        {/* Countdown Timer */}
+        <div className="flex items-center gap-4">
+          {/* Days */}
+          <div className="w-[60px] h-[60px] flex flex-col items-center justify-center border border-[#ccc] rounded-[12px] shadow-[0_2px_0_#ccc]">
+            <p className="text-[20px] font-bold leading-none">00</p>
+            <p className="text-xs">Days</p>
+          </div>
+
+          {/* Colon */}
+          <div className="text-[24px] font-extrabold">:</div>
+
+          {/* Hours */}
+          <div className="w-[60px] h-[60px] flex flex-col items-center justify-center border border-[#ccc] rounded-[12px] shadow-[0_2px_0_#ccc]">
+            <p className="text-[20px] font-bold leading-none">00</p>
+            <p className="text-xs">Hours</p>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Button */}
+      <button className="bg-white text-[#000] font-bold text-sm rounded-full py-2.5 mt-4 w-full">
+        Apply for Loan
+      </button>
+    </div>
+  );
+};
+
+export default LoanWallet;
