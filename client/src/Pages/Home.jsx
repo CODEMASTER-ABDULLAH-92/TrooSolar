@@ -83,7 +83,7 @@ const Home = () => {
         </div>
 
         {/* Dashboard Content */}
-        <div className="p-5 bg-[#cdcdcd]/10 min-h-[calc(100vh-90px)]">
+        <div className="p-5 bg-[#f5f7ff] min-h-[calc(100vh-90px)]">
           <h1 className="text-xl font-semibold mb-1">Hi, Qamardeen</h1>
           <p className="text-sm text-gray-700 mb-4">
             Welcome to your dashboard
@@ -99,6 +99,12 @@ const Home = () => {
               className="h-full w-full object-cover rounded-lg"
             />
           </div>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <img src={assets} alt="" />
         </div>
       </div>
     </div>
