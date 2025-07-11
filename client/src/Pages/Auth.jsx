@@ -15,14 +15,14 @@ const Auth = () => {
     password: "",
     code: "",
   });
-  
+
   const [hidePassword, setHidePassword] = useState(true);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [id]: value
+      [id]: value,
     }));
   };
 
@@ -108,51 +108,47 @@ const Auth = () => {
                   value={formData.email}
                   onChange={handleChange}
                 />
-<div className="sm:hidden block">
-{!isLogin && (
-                  <>
-<Input
-                  id="password"
-                  label="Password"
-                  placeholder="Password"
-                  isPassword={true}
-                  hidePassword={hidePassword}
-                  setHidePassword={setHidePassword}
-                  value={formData.password}
+                <div className="sm:hidden block">
+                  {!isLogin && (
+                    <>
+                      <Input
+                        id="password"
+                        label="Password"
+                        placeholder="Password"
+                        isPassword={true}
+                        hidePassword={hidePassword}
+                        setHidePassword={setHidePassword}
+                        value={formData.password}
+                        onChange={handleChange}
+                      />
+                      <Input
+                        id="bvn"
+                        label="BVN Number"
+                        placeholder="BVN Number"
+                        type="number"
+                        value={formData.bvn}
+                        onChange={handleChange}
+                      />
+                      <Input
+                        id="code"
+                        label="Referral Code (Optional)"
+                        placeholder="Referral Code"
+                        type="number"
+                        value={formData.code}
+                        onChange={handleChange}
+                      />
+                    </>
+                  )}
+                </div>
+
+                <Input
+                  id="phone"
+                  label="Phone Number"
+                  placeholder="Phone Number"
+                  type="tel"
+                  value={formData.phone}
                   onChange={handleChange}
                 />
-                    <Input
-                      id="bvn"
-                      label="BVN Number"
-                      placeholder="BVN Number"
-                      type="number"
-                      value={formData.bvn}
-                      onChange={handleChange}
-                    />
-                     <Input
-                    id="code"
-                    label="Referral Code (Optional)"
-                    placeholder="Referral Code"
-                    type="number"
-                    value={formData.code}
-                    onChange={handleChange}
-                  />
-                  </>
-                )}
-
-</div>
-
-
-
-  <Input
-                      id="phone"
-                      label="Phone Number"
-                      placeholder="Phone Number"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                    />
-
               </div>
 
               <button
@@ -163,7 +159,9 @@ const Auth = () => {
               </button>
 
               <p className="text-center text-sm">
-                {isLogin ? "Don't have an account?" : "I already have an account"}
+                {isLogin
+                  ? "Don't have an account?"
+                  : "I already have an account"}
               </p>
 
               <button
