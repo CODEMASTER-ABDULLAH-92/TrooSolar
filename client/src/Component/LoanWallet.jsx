@@ -3,7 +3,7 @@ import React from 'react';
 
 const LoanWallet = () => {
   return (
-    <div className="bg-[#273e8e] rounded-lg px-4 py-2 text-white shadow-md w-full max-w-md">
+    <div className="bg-[#273e8e] rounded-lg px-4 py-5 text-white shadow-md">
       {/* Header: Label & Icon */}
       <div className="flex justify-between items-center mb-2">
         <p className="text-white/70 text-sm">Loan Wallet</p>
@@ -16,7 +16,7 @@ const LoanWallet = () => {
       <h1 className="text-xl font-extrabold mb-3">N2,000,000</h1>
 
       {/* Loan Info + Countdown */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-[#1d3073] py-3 px-3 rounded-md gap-3">
+      <div className="flex flex-col min-h-[80px] sm:flex-row justify-between items-start sm:items-center bg-[#1d3073] py-3 px-3 rounded-md gap-3">
         {/* Loan Info */}
         <div className="flex flex-col text-sm leading-tight">
           <p className="text-white/80">You have no loans</p>
