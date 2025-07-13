@@ -5,11 +5,13 @@ import Otp from './Pages/Otp'
 import Home from './Pages/Home'
 import HomePage from './Pages/HomePage'
 import ProductDetails from './Pages/ProductDetails'
+import Cart from './Pages/Cart'
 const App = () => {
   return (
     <div>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/cart' element={<Cart/>}/>
         <Route path='/homePage' element={<HomePage/>}/>
         <Route path='/verification' element={<Otp/>}/>
         <Route path="/login" element={<Auth />} />
