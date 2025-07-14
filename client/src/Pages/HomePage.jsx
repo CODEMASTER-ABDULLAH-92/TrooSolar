@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import SideBar from "../Component/SideBar";
 import { Bell, ShoppingCart } from "lucide-react";
 import SearchBar from "../Component/SearchBar";
@@ -6,8 +6,10 @@ import Items from "../Component/Items";
 import Product from "../Component/Product";
 import { products } from "../assets/data";
 import { Link } from "react-router-dom";
+import { ContextApi } from "../Context/AppContext";
 
 const HomePage = () => {
+  const {filteredResults} = useContext(ContextApi);
   return (
     <div className="flex w-full min-h-screen bg-gray-100">
       {/* Sidebar */}
@@ -52,8 +54,8 @@ const HomePage = () => {
 <div className="px-6 py-6 w-full overflow-scroll">
   <h1 className="text-2xl font-semibold text-gray-800 mb-4">All Products</h1>
   <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 grid-cols-1 space-y-4">
-    {products.map((item, index) => (
-      <Link to={`/homePage/product/${item.id}`}>
+    {filteredResults.map((item, index) => (
+      <Link key={index} to={`/homePage/product/${item.id}`}>
       <Product 
         key={index}
         image={item.image}

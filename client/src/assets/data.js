@@ -9,6 +9,7 @@ import userGear from "../assets/userGear.png";
 import window from "../assets/window.png";
 import shopping from "../assets/shopping.png";
 import GearSix from "../assets/GearSix.png";
+import LoanBox from "../assets/LoanBox.svg";
 import smLogo from "../assets/smLogo.png";
 import sidebar from "../assets/sidebar.png";
 import yt from "../assets/yt.png";
@@ -57,7 +58,7 @@ import connector from "../assets/connector.svg";
 import product from "../assets/product.png";
 
 
-export const assets = {product,star1,star2,
+export const assets = {product,star1,star2, LoanBox,
   battery,solar,bulb,inverter,mttp,solarfan,surge,connector,light,
     insta, smLogo, sale, vec1, vec2, vec3, vec4, greenTick, b1, b2,line,stars,
     loginImage, logout, logo, store, loans, userGear, window,
@@ -69,11 +70,11 @@ export const assets = {product,star1,star2,
 
 
 export const Sidebar_links = [
-  { name: "Home", link: "/dashboard", icon: assets.dashboard, sublinks: [] },
+  { name: "Home", link: "/homePage", icon: assets.dashboard, sublinks: [] },
   { name: "Store", link: "/shop-mgt", icon: assets.ShopMgt, sublinks: [] },
-  { name: "Loan", link: "/loans-mgt", icon: assets.Loanmgt, sublinks: [] },
+  { name: "Loan", link: "/loan", icon: assets.Loanmgt, sublinks: [] },
   { name: "Tools", link: "/settings", icon: assets.settings, sublinks: [] },
-  { name: "Cart", link: "/user-mgt", icon: assets.cart, sublinks: [] },
+  { name: "Cart", link: "/cart", icon: assets.cart, sublinks: [] },
   { name: "More", link: "/credit-score", icon: assets.userGear, sublinks: [] },
 ];
 
@@ -253,6 +254,16 @@ export const categories = [
   "Connectors",
   "Wire Cables",
   "Extension Cords"
+];
+
+export const bankOptions = [
+  "Habib Bank Limited (HBL)",
+  "Meezan Bank",
+  "United Bank Limited (UBL)",
+  "MCB Bank",
+  "Allied Bank",
+  "Bank Alfalah",
+  "Faysal Bank",
 ];
 
 export const starsArr = [

@@ -16,7 +16,7 @@ export const Input = ({
     <div className={isMobile ? "" : "mb-4"}>
       <label 
         htmlFor={id} 
-        className="block mb-1 text-sm font-medium text-gray-700"
+        className="block mb-3 text-[16px] text-gray-700"
       >
         {label}
       </label>
@@ -25,7 +25,7 @@ export const Input = ({
           type={isPassword ? (hidePassword ? "password" : "text") : type}
           id={id}
           placeholder={placeholder}
-          className="w-full border border-gray-300 rounded-lg p-3 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full border border-gray-300 bg-white rounded-lg p-3 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={value}
           onChange={onChange}
         />

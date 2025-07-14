@@ -12,7 +12,7 @@ const Home = ({}) => {
     <div className="flex min-h-screen w-full">
       <SideBar/>
       {/* Main Content */}
-      <div className="w-full sm:w-[calc(100%-250px)] xl:w-[calc(100%-300px)]">
+      <div className="w-full sm:w-[calc(100%-250px)]">
         {/* Topbar */}
         <div className="flex gap-3 items-center h-[90px] bg-white justify-end px-5 sm:pr-10 py-5">
           <div className="rounded-lg flex justify-center items-center shadow-md h-10 w-10">
@@ -21,14 +21,14 @@ const Home = ({}) => {
           <div className="bg-[#e9e9e9] h-12 w-12 rounded-full flex items-center justify-center">
             <p className="text-lg text-[#909090] font-bold">QA</p>
           </div>
-          <p className="text-[#000000] text-lg font-bold hidden sm:block">
+          <p className="text-[#000000] text-lg  hidden sm:block">
             Qamardeen AbdulMalik
           </p>
         </div>
 
         <div className="bg-[#F5F7FF] p-5">
           <div>
-            <h1 className="font-extrabold text-2xl">Hi, <span className="text-[#273e8e] font-extrabold"> Qamardeen</span></h1>
+            <h1 className=" text-2xl">Hi, <span className="text-[#273e8e] font-bold"> Qamardeen</span></h1>
             <p className="mt-1">Welcome to Your Dashboard</p>
           </div>
 
