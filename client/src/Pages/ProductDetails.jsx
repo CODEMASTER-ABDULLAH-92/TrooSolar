@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Links, useParams } from "react-router-dom";
 import { assets, products, starsArr } from "../assets/data";
 import SideBar from "../Component/SideBar";
 import { Bell, ShoppingCart } from "lucide-react";
@@ -65,18 +65,18 @@ const ProductDetails = () => {
                 <button className="py-3 px-4 border border-[#273e8e] rounded-full hover:bg-[#273e8e]/10 transition">
                   Add To Cart
                 </button>
-                <button className="py-3 px-4 bg-[#273e8e] text-white rounded-full hover:bg-[#273e8e]/90 transition">
+                <Link to="/cart" className="py-3 text-center px-4 bg-[#273e8e] text-white rounded-full hover:bg-[#273e8e]/90 transition">
                   Buy Now
-                </button>
+                </Link>
               </div>
 
               <div className="p-4 mt-6 bg-yellow-50 rounded-lg">
-                <p className="text-yellow-600 text-sm sm:text-base">
+                <p className="text-yellow-600 text-sm pb-5 sm:text-base">
                   Don't have the finances to proceed? Take a loan and repay at your convenience
                 </p>
-                <button className="bg-[#E8A91D] py-2 px-6 text-white rounded-full mt-3 text-sm hover:bg-[#E8A91D]/90 transition">
+                <Link to="/loan" className="bg-[#E8A91D] py-2  px-6 text-white rounded-full text-sm hover:bg-[#E8A91D]/90 transition">
                   Apply
-                </button>
+                </Link>
               </div>
             </div>
 

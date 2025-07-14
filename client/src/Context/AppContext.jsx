@@ -4,7 +4,7 @@ import { products } from "../assets/data";
 export const ContextApi = createContext();
 
 export const ContextProvider = (props) => {
-  const [quantity, setQuantity] = useState({});
+  const [quantity, setQuantity] = useState();
   const [filteredResults, setFilteredResults] = useState([]);
 
   const addToCart = (itemId) => {
