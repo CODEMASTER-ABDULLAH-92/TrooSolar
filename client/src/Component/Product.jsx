@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ContextApi } from "../Context/AppContext";
 const Product = ({
   image,
   heading,
@@ -8,10 +9,11 @@ const Product = ({
   soldText,
   progressBar,
   rating,
+  id,
 }) => {
+  const { addToCart, removeToCart } = useContext(ContextApi);
   return (
     <div className="max-w-[340px] w-full bg-white rounded-2xl p-4 shadow-sm space-y-4">
-      
       {/* Image Section */}
       <div className="border-l-[4px] border-[#e8a91d] rounded-xl overflow-hidden">
         <img
@@ -28,7 +30,6 @@ const Product = ({
 
       {/* Price and Progress Section */}
       <div className="flex justify-between items-start">
-        
         {/* Left: Price Info */}
         <div>
           <p className="font-bold text-[#273E8E] text-lg">{price}</p>
@@ -63,10 +64,11 @@ const Product = ({
         <button className="border border-[#273e8e] py-2 rounded-full text-[#273e8e] hover:bg-[#273e8e]/10 transition duration-150">
           Learn More
         </button>
-        <button className="py-2 rounded-full bg-[#273e8e] text-white hover:bg-[#1f2f6e] transition duration-150">
+        <button onClick={()=>addToCart(id)} className="py-2 rounded-full bg-[#273e8e] text-white hover:bg-[#1f2f6e] transition duration-150">
           Add to Cart
         </button>
       </div>
+
     </div>
   );
 };

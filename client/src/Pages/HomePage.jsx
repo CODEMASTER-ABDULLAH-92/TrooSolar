@@ -58,6 +58,7 @@ const HomePage = () => {
       <Link key={index} to={`/homePage/product/${item.id}`}>
       <Product 
         key={index}
+        id={item.id}
         image={item.image}
         heading={item.heading}
         price={item.price}

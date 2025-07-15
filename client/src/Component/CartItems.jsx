@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import { Minus, Plus, Trash } from "lucide-react";
+import { ContextApi } from "../Context/AppContext";
 
 const CartItems = ({ itemId, name, price, image, showControls = true }) => {
+  const { addToCart, removeToCart, cartItems } = useContext(ContextApi);
+  const itemQty = cartItems[itemId] || 0;
   return (
     <div className="min-h-[150px] w-full bg-white rounded-2xl border p-4 shadow-sm">
       <div className="flex flex-col sm:flex-row gap-4">
@@ -14,7 +17,7 @@ const CartItems = ({ itemId, name, price, image, showControls = true }) => {
         <div className="flex-1 flex flex-col justify-between">
           <div className="space-y-1">
             <h2 className="text-lg sm:text-xl">{name}</h2>
-            <p className="text-xl font-bold text-[#273e8e]">₦{price}</p>
+            <p className="text-xl font-bold text-[#273e8e]">N{price}</p>
           </div>
 
           {/* Controls */}
@@ -27,11 +30,20 @@ const CartItems = ({ itemId, name, price, image, showControls = true }) => {
 
               {/* Quantity Controls */}
               <div className="flex items-center gap-3">
-                <button className="h-10 w-10 flex items-center justify-center bg-[#273e8e] rounded-md text-white hover:bg-[#1f2f6e] transition">
+                <button
+                  onClick={() => removeToCart(itemId)}
+                  className="h-10 w-10 flex items-center justify-center bg-[#273e8e] rounded-md text-white hover:bg-[#1f2f6e] transition"
+                >
                   <Minus />
                 </button>
-                {/* <span className="text-lg font-medium">{itemQty}</span> */}
-                <button className="h-10 w-10 flex items-center justify-center bg-[#273e8e] rounded-md text-white hover:bg-[#1f2f6e] transition">
+
+                {/* ✅ Display Quantity */}
+                <span className="text-lg font-medium">{itemQty}</span>
+
+                <button
+                  onClick={() => addToCart(itemId)}
+                  className="h-10 w-10 flex items-center justify-center bg-[#273e8e] rounded-md text-white hover:bg-[#1f2f6e] transition"
+                >
                   <Plus />
                 </button>
               </div>
