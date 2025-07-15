@@ -1,19 +1,32 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronDown, X } from "lucide-react";
+import { useParams } from "react-router-dom";
+import { products } from "../assets/data";
 
-const BRAND_OPTIONS = ["Nawman", "Nawman1", "Nawman2", "Nawman3"]; // Made unique and added "All"
+const BRAND_OPTIONS = [
+  "All",
+  "SunTech",
+  "PowerCell",
+  "Voltas",
+  "CoolBreeze",
+  "BrightLite",
+  "ChargeMate",
+  "WireX",
+  "SafeSurge",
+];
 
-const BrandDropDown = () => {
+const BrandDropDown = ({ onFilter }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState("Brand");
+  const [selected, setSelected] = useState("All");
   const dropdownRef = useRef(null);
+  const { category } = useParams();
 
   const handleSelect = useCallback((option) => {
     setSelected(option);
     setIsOpen(false);
   }, []);
 
-  const toggleDropdown = useCallback(() => setIsOpen(prev => !prev), []);
+  const toggleDropdown = useCallback(() => setIsOpen((prev) => !prev), []);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -26,28 +39,35 @@ const BrandDropDown = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Filter products when category or brand changes
+  useEffect(() => {
+    let filtered = products.filter((item) => item.category === category);
+
+    if (selected !== "All") {
+      filtered = filtered.filter((item) => item.brandName === selected);
+    }
+
+    if (onFilter) {
+      onFilter(filtered); // send data up
+    }
+  }, [category, selected, onFilter]);
+
   return (
-    <div ref={dropdownRef}  className="cursor-pointer relative w-full max-w-[200px]">
+    <div ref={dropdownRef} className="relative w-full max-w-[200px] cursor-pointer">
       <div className="px-5 py-5 bg-white border border-black/50 rounded-2xl shadow-sm">
-        {/* Toggle Button */}
         <button
           onClick={toggleDropdown}
-          className="flex items-center cursor-pointer justify-between w-full  rounded-md font-medium"
+          className="flex items-center justify-between w-full font-medium"
           aria-expanded={isOpen}
           aria-haspopup="listbox"
         >
-          <span className="text-lg text-gray-500 -tracking-tighter">
-            {selected}
-          </span>
+          <span className="text-lg text-gray-500">{selected}</span>
           <ChevronDown
             size={26}
-            className={`transition-transform duration-200 ${
-              isOpen ? "rotate-180" : ""
-            }`}
+            className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
           />
         </button>
 
-        {/* Dropdown List */}
         {isOpen && (
           <div
             className="absolute left-0 z-50 mt-1 w-[400px] bg-white border border-gray-200 rounded-md shadow-lg max-h-[400px] overflow-y-auto"
@@ -87,17 +107,20 @@ const BrandDropDown = () => {
               );
             })}
 
-
             <div className="grid grid-cols-2 gap-3 py-4 px-2">
-        <button className="border  text-sm border-[#273e8e] py-3.5 rounded-full text-[#273e8e] hover:bg-[#273e8e]/10 transition duration-150">
-        Clear
-        </button>
-        <button className=" text-sm rounded-full py-3.5
-         bg-[#273e8e] text-white hover:bg-[#1f2f6e] transition duration-150">
-          Save
-        </button>
-      </div>
-
+              <button
+                onClick={() => setSelected("All")}
+                className="border text-sm border-[#273e8e] py-3.5 rounded-full text-[#273e8e] hover:bg-[#273e8e]/10 transition duration-150"
+              >
+                Clear
+              </button>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="text-sm rounded-full py-3.5 bg-[#273e8e] text-white hover:bg-[#1f2f6e] transition duration-150"
+              >
+                Save
+              </button>
+            </div>
           </div>
         )}
       </div>

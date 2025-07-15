@@ -3,16 +3,14 @@ import { ChevronDown, Search, X } from "lucide-react";
 import { ContextApi } from "../Context/AppContext";
 
 const dropdownOptions = [
-  "All",
-  "Solar Panels",
-  "Batteries",
-  "MTTP Chargers",
-  "LED Bulbs",
-  "Solar Fans",
-  "Surge Arrestor",
-  "Connectors",
-  "Wire Cables",
-  "Extension Cords",
+    "SolarPanels",
+    "Batteries",
+    "Inverters",
+    "SolarFans",
+    "LEDBulbs",
+    "mttp",
+    "Connectors",
+    "SurgeArrestor",
 ];
 
 const SearchBar = () => {

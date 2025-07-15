@@ -21,7 +21,21 @@ const formatCategoryName = (category) => {
 const SpecificProduct = () => {
   const { category } = useParams()
   const [specificProduct, setSpecificProduct] = useState([])
-  const { /* extract any needed context values here */ } = useContext(ContextApi)
+
+
+
+  const handlePriceFilter = (min, max) => {
+    if (min == null && max == null) {
+      setFilteredProducts(products);
+    } else {
+      const result = products.filter((product) => {
+        const numericPrice = parseInt(product.price.replace(/[^\d]/g, ""));
+        return numericPrice >= min && numericPrice <= max;
+      });
+      setFilteredProducts(result);
+    }
+  };
+
 
   useEffect(() => {
     const filteredProducts = products.filter(item => item.category === category)
@@ -70,8 +84,8 @@ const SpecificProduct = () => {
         {/* Products Section */}
         <div className="px-6 py-6 flex-1 overflow-auto">
           <div className="flex justify-start items-center gap-4 mb-4">
-            <BrandDropDown/>
-            <PriceDropDown/>
+          <BrandDropDown onFilter={(data) => setSpecificProduct(data)} />
+            <PriceDropDown onFilter={handlePriceFilter} />
           </div>
 
           <h1 className="text-2xl text-gray-800 my-4">{displayCategory}</h1>
