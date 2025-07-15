@@ -77,12 +77,12 @@ const SearchBar = () => {
 
         {isDropdownOpen && (
           <div className="absolute left-0 top-full mt-1 max-h-[400px] z-50 w-[280px] bg-white rounded-md shadow-lg border border-gray-200 overflow-y-auto">
-            <div className="flex justify-between items-center px-4 py-2 border-b">
-              <span className="font-semibold text-gray-600">Select Category</span>
+            <div className="px-4 py-2 border-b">
+               <p className="text-center text-gray-500">Select Category</p> 
               <X
-                size={16}
+                size={20}
                 onClick={() => setIsDropdownOpen(false)}
-                className="cursor-pointer text-gray-500 hover:text-gray-800"
+                className="cursor-pointer absolute top-2.5 right-2 text-gray-500 hover:text-gray-800"
               />
             </div>
 
@@ -100,11 +100,11 @@ const SearchBar = () => {
                 }`}
               >
                 <span>{option}</span>
+                <span className="h-4 w-4 rounded-full border border-[#273e8e] flex items-center justify-center">
                 {selectedOption === option && (
-                  <span className="h-4 w-4 rounded-full border border-blue-600 flex items-center justify-center">
-                    <span className="h-2 w-2 bg-blue-600 rounded-full" />
-                  </span>
+                <span className="h-2 w-2 bg-[#273e8e] rounded-full" />
                 )}
+                  </span>
               </button>
             ))}
           </div>

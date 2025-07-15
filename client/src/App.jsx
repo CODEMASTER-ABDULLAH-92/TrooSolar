@@ -9,12 +9,14 @@ import Cart from './Pages/Cart'
 import LoanPage from './Pages/LoanPage'
 import LinkAccount from './Pages/LinkAccount'
 import LoanCalculation from './Pages/LoanCalCulation'
+import SpecificProduct from './Pages/SpecificProduct'
 const App = () => {
   return (
     <div>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/cart' element={<Cart/>}/>
+        <Route path='/product/:category' element={<SpecificProduct/>}/>
         <Route path='/homePage' element={<HomePage/>}/>
         <Route path='/verification' element={<Otp/>}/>
         <Route path="/login" element={<Auth />} />

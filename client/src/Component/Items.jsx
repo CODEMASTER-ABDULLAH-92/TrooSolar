@@ -1,23 +1,26 @@
 import React from 'react';
 import { assets } from "../assets/data";
+import { Link } from 'react-router-dom';
 
 const Items = () => {
   const items = [
-    { image: assets.solar, text: "Solar Panels" },
-    { image: assets.battery, text: "Solar Batteries" },
-    { image: assets.inverter, text: "Inverters" },
-    { image: assets.mttp, text: "MTTP Chargers" },
-    { image: assets.bulb, text: "LED Bulbs" },
-    { image: assets.solarfan, text: "Solar Fan" },
-    { image: assets.surge, text: "Surge Arrestor" },
-    { image: assets.connector, text: "Connectors" },
+    { category:"SolarPanels", image: assets.solar, text: "Solar Panels" },
+    { category:"Batteries", image: assets.battery, text: "Solar Batteries" },
+    { category:"Inverters", image: assets.inverter, text: "Inverters" },
+    { category:"mttp", image: assets.mttp, text: "MTTP Chargers" },
+    { category:"LEDBulbs", image: assets.bulb, text: "LED Bulbs" },
+    { category:"SolarFans", image: assets.solarfan, text: "Solar Fan" },
+    { category:"SurgeArrestor", image: assets.surge, text: "Surge Arrestor" },
+    { category:"Connectors", image: assets.connector, text: "Connectors" },
   ];
 
   return (
     <div className="w-full mt-4 overflow-x-auto">
       <div className="flex gap-4 px-4 py-4  min-w-fit">
+
         {items.map((item, index) => (
-          <div
+         <Link to={`/product/${item.category}`}>
+         <div
             key={index}
             className="flex flex-col items-center justify-center w-[160px] h-[180px] bg-white rounded-2xl shadow-sm shrink-0"
           >
@@ -32,6 +35,7 @@ const Items = () => {
               {item.text}
             </h1>
           </div>
+         </Link>
         ))}
       </div>
     </div>

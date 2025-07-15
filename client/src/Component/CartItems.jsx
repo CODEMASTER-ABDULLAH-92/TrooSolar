@@ -1,56 +1,42 @@
 import React, { useContext } from "react";
 import { Minus, Plus, Trash } from "lucide-react";
 
-
-const CartItems = ({ itemId, name, price, image }) => {
-
+const CartItems = ({ itemId, name, price, image, showControls = true }) => {
   return (
     <div className="min-h-[150px] w-full bg-white rounded-2xl border p-4 shadow-sm">
       <div className="flex flex-col sm:flex-row gap-4">
         {/* Product Image */}
         <div className="w-full sm:w-1/4 bg-[#f3f3f3] flex justify-center items-center rounded-2xl overflow-hidden">
-          <img
-            src={image}
-            alt={name}
-            className="h-[120px] object-contain"
-          />
+          <img src={image} alt={name} className="h-[120px] object-contain" />
         </div>
 
         {/* Product Details */}
         <div className="flex-1 flex flex-col justify-between">
           <div className="space-y-1">
-            <h2 className="text-lg sm:text-xl font-semibold">{name}</h2>
-            <p className="text-xl font-bold text-[#273e8e]">₦{price.toLocaleString()}</p>
+            <h2 className="text-lg sm:text-xl">{name}</h2>
+            <p className="text-xl font-bold text-[#273e8e]">₦{price}</p>
           </div>
 
           {/* Controls */}
-          <div className="flex items-center justify-between mt-4">
-            {/* Delete Button */}
-            <button
-
-              className="h-10 w-10 flex items-center justify-center rounded-lg shadow bg-white hover:bg-gray-100"
-            >
-              <Trash color="red" size={18} />
-            </button>
-
-            {/* Quantity Controls */}
-            <div className="flex items-center gap-3">
-              <button
-
-                className="h-10 w-10 flex items-center justify-center bg-[#273e8e] rounded-md text-white hover:bg-[#1f2f6e] transition"
-              >
-                <Minus />
+          {showControls && (
+            <div className="flex items-center justify-between mt-4">
+              {/* Delete Button */}
+              <button className="h-10 w-10 flex items-center justify-center rounded-lg shadow bg-white hover:bg-gray-100">
+                <Trash color="red" size={18} />
               </button>
 
-              {/* <span className="text-lg font-medium">{itemQty}</span> */}
-
-              <button
-                className="h-10 w-10 flex items-center justify-center bg-[#273e8e] rounded-md text-white hover:bg-[#1f2f6e] transition"
-              >
-                <Plus />
-              </button>
+              {/* Quantity Controls */}
+              <div className="flex items-center gap-3">
+                <button className="h-10 w-10 flex items-center justify-center bg-[#273e8e] rounded-md text-white hover:bg-[#1f2f6e] transition">
+                  <Minus />
+                </button>
+                {/* <span className="text-lg font-medium">{itemQty}</span> */}
+                <button className="h-10 w-10 flex items-center justify-center bg-[#273e8e] rounded-md text-white hover:bg-[#1f2f6e] transition">
+                  <Plus />
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

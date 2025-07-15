@@ -70,8 +70,8 @@ export const assets = {product,star1,star2, LoanBox,
 
 
 export const Sidebar_links = [
-  { name: "Home", link: "/homePage", icon: assets.dashboard, sublinks: [] },
-  { name: "Store", link: "/shop-mgt", icon: assets.ShopMgt, sublinks: [] },
+  { name: "Home", link: "/", icon: assets.dashboard, sublinks: [] },
+  { name: "Store", link: "/homePage", icon: assets.ShopMgt, sublinks: [] },
   { name: "Loan", link: "/loan", icon: assets.Loanmgt, sublinks: [] },
   { name: "Tools", link: "/settings", icon: assets.settings, sublinks: [] },
   { name: "Cart", link: "/cart", icon: assets.cart, sublinks: [] },
@@ -133,7 +133,7 @@ export const products = [
     id: "abdcdfw",
     image: assets.product,
     brandName: "Newman",
-    category: "Solar Panels",
+    category: "SolarPanels",
     heading: "2 Newman Inverters + 1 Solar Panel + 4 LED Bulbs",
     price: "N2,500,000",
     oldPrice: "N5,000,000",
@@ -175,7 +175,7 @@ export const products = [
     id: "jsjsjjs",
     image: assets.product,
     brandName: "Su-Kam",
-    category: "Solar Fans",
+    category: "SolarFans",
     heading: "2 Newman Inverters + 1 Solar Panel + 4 LED Bulbs",
     price: "N2,500,000",
     oldPrice: "N5,000,000",
@@ -189,7 +189,7 @@ export const products = [
     id: "abc123",
     image: assets.product,
     brandName: "Havells",
-    category: "LED Bulbs",
+    category: "LEDBulbs",
     heading: "2 Newman Inverters + 1 Solar Panel + 4 LED Bulbs",
     price: "N1,800,000",
     oldPrice: "N3,600,000",
@@ -203,7 +203,7 @@ export const products = [
     id: "def456",
     image: assets.product,
     brandName: "Anchor",
-    category: "Extension Cords",
+    category: "mttp",
     heading: "2 Newman Inverters + 1 Solar Panel + 4 LED Bulbs",
     price: "N950,000",
     oldPrice: "N1,900,000",
@@ -217,7 +217,7 @@ export const products = [
     id: "ghi789",
     image: assets.product,
     brandName: "Polycab",
-    category: "Wire Cables",
+    category: "Connectors",
     heading: "2 Newman Inverters + 1 Solar Panel + 4 LED Bulbs",
     price: "N1,200,000",
     oldPrice: "N2,400,000",
@@ -231,7 +231,7 @@ export const products = [
     id: "jkl012",
     image: assets.product,
     brandName: "Phoenix",
-    category: "Surge Arrestor",
+    category: "SurgeArrestor",
     heading: "2 Newman Inverters + 1 Solar Panel + 4 LED Bulbs",
     price: "N750,000",
     oldPrice: "N1,500,000",
@@ -243,18 +243,6 @@ export const products = [
   }
 ];
 
-export const categories = [
-  "All",
-  "Solar Panels",
-  "Batteries",
-  "Inverters",
-  "LED Bulbs",
-  "Solar Fans",
-  "Surge Arrestor",
-  "Connectors",
-  "Wire Cables",
-  "Extension Cords"
-];
 
 export const bankOptions = [
   "Habib Bank Limited (HBL)",
