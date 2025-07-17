@@ -1,9 +1,16 @@
 import insta from "../assets/insta.png";
+import rePayIcon from "../assets/rePayIcon.svg";
+import house1 from "../assets/house1.svg";
+import house2 from "../assets/house2.svg";
+import house3 from "../assets/house3.svg";
+import uploadArea from "../assets/uploadArea.svg";
+import house4 from "../assets/house4.svg";
 import loginImage from "../assets/loginImage.jpg";
 import logo from "../assets/logo.png";
 import twitter from "../assets/twitter.png";
 import whatsApp from "../assets/whatsApp.png";
 import store from "../assets/store.png";
+import creditNeedle from "../assets/creditNeedle.png";
 import loans from "../assets/loan.png";
 import userGear from "../assets/userGear.png";
 import window from "../assets/window.png";
@@ -58,13 +65,13 @@ import connector from "../assets/connector.svg";
 import product from "../assets/product.png";
 
 
-export const assets = {product,star1,star2, LoanBox,
+export const assets = {product,star1,star2,uploadArea, LoanBox,creditNeedle,house1,house2,house3,house4,
   battery,solar,bulb,inverter,mttp,solarfan,surge,connector,light,
     insta, smLogo, sale, vec1, vec2, vec3, vec4, greenTick, b1, b2,line,stars,
     loginImage, logout, logo, store, loans, userGear, window,
     shopping, GearSix, sidebar, twitter, whatsApp, yt, loginImageForSm,
     dashboard, usermgt, creditMgt, Loanmgt, loansDisbursement, Transactions,
-    balance, ShopMgt, referral, analytics, settings, UserGear,cart
+    balance, ShopMgt, referral, analytics, settings, UserGear,cart,rePayIcon
 };
 
 
@@ -356,18 +363,38 @@ export const products = [
   }
 ];
 
-
-export const brandNames = [
-  "SunTech",
-  "PowerCell",
-  "Voltas",
-  "CoolBreeze",
-  "BrightLite",
-  "ChargeMate",
-  "WireX",
-  "SafeSurge",
-];
-
+export const productBundlers = [
+  {
+    heading:"2 Newman Inverters + 1 Solar panel + 4 LED bulbs",
+    bundleTitle: "Troosolar Mini bundle",
+    backupInfo: "Provides backup for 10 hours",
+    price: 2500000,
+    discountedPrice: 2450000, // optional field
+    label: "Mini Bundle",
+    totalLoad:"2500",
+    inverterRating: "1200",
+    totalOutput:"2500",
+    itemsIncluded: [
+      [
+        {
+          title: "Newman inverter - 4kva",
+          price: 1000000,
+          icon: "inverter-icon.png" // replace with actual path/icon component
+        },
+        {
+          title: "Newman Battery - 2kva",
+          price: 1000000,
+          icon: "battery-icon.png"
+        },
+        {
+          title: "4 led bulbs",
+          price: 100000,
+          icon: "bulb-icon.png"
+        }
+      ]
+    ],
+  }
+]
 
 export const bankOptions = [
   "Habib Bank Limited (HBL)",

@@ -2,18 +2,29 @@ import React, { useState } from "react";
 import { Bell } from "lucide-react";
 import SideBar from "../Component/SideBar";
 import { Input } from "../Component/Input";
-import { BankDropdown } from "../Component/DropDown";
-import { bankOptions } from "../assets/data";
+
 import LoanRepaymentCard from "../Component/LoanRepaymentCard";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { DurationDropDown } from "../Component/DurationDropDown";
 
 const LoanCalculation = () => {
   const [bankName, setBankName] = useState("");
   const [accountNumber, setAccountNumber] = useState("");
   const [accountName, setAccountName] = useState("");
+  
+  const durationOption = [
+    "3 month",
+    "6 month",
+    "9 month",
+    "12 month",
+    "1 Year",
+    "2 Year",
+  ]
+  const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ accountNumber, bankName, accountName });
+    navigate("/creditscore")
   };
   return (
     <div className="flex min-h-screen w-full overflow-clip">
@@ -59,24 +70,23 @@ const LoanCalculation = () => {
                 value={accountName}
                 onChange={(e) => setAccountName(e.target.value)}
               />
-              <BankDropdown
+              <DurationDropDown
                 id="duration"
                 label="Repayment Duration"
                 value={bankName}
                 placeHolder="Select Duration"
                 onChange={(e) => setBankName(e.target.value)}
-                options={bankOptions}
+                options={durationOption}
               />
 
               <div className="flex justify-center items-center gap-4">
                 <Link to={"/linkAccount"} className="mt-4 text-center py-4 w-[40%] px-10 bg-white border text-black rounded-full transition duration-200">
                   Back
                 </Link>
-
                 <button
-                  type="submit"
+                  type="submit" 
                   className="mt-4 py-4 w-full px-10 bg-[#273e8e] text-white rounded-full hover:bg-[#1f2f6d] transition duration-200"
-                >
+                  >
                   Proceed
                 </button>
               </div>

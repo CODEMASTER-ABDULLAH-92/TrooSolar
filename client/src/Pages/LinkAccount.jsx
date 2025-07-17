@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Bell } from "lucide-react";
 import SideBar from "../Component/SideBar";
 import { Input } from "../Component/Input";
-import { BankDropdown } from "../Component/DropDown";
+import {BankDropdown} from "../Component/BankDropDown"
 import { bankOptions } from "../assets/data";
 import { useNavigate } from "react-router-dom";
 
@@ -10,11 +10,11 @@ const LinkAccount = () => {
   const [bankName, setBankName] = useState("");
   const [accountNumber, setAccountNumber] = useState("");
   const [accountName, setAccountName] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ accountNumber, bankName, accountName });
-navigate("/loanCalculate");
+    navigate("/loanCalculate");
   };
 
   return (
@@ -72,7 +72,8 @@ navigate("/loanCalculate");
                 onChange={(e) => setAccountName(e.target.value)}
               />
 
-              <button onClick={navigate("/loanCalculate")}
+              <button
+                onClick={navigate("/loanCalculate")}
                 type="submit"
                 className="mt-4 py-4 w-full px-10 bg-[#273e8e] text-white rounded-full hover:bg-[#1f2f6d] transition duration-200"
               >
@@ -84,8 +85,8 @@ navigate("/loanCalculate");
             <div className="w-full md:w-1/2 flex items-start justify-center">
               <div className="bg-[#273E8E1A] mt-4 md:mt-10 p-4 rounded-lg border-dashed border-2 border-[#273e8e] max-w-md w-full">
                 <p className="text-center text-sm text-[#273E8E]">
-                  Kindly note that a service charge of <strong>N50</strong> will be
-                  deducted
+                  Kindly note that a service charge of <strong>N50</strong> will
+                  be deducted
                 </p>
               </div>
             </div>

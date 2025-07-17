@@ -1,12 +1,11 @@
 import React from "react";
 import { assets, solarBundleData } from "../assets/data";
-import { Bell } from "lucide-react";
 import LoanWallet from "../Component/LoanWallet";
 import SmallBoxes from "../Component/SmallBoxes";
 import ShoppingWallet from "../Component/ShoppingWallet";
 import SideBar from "../Component/SideBar";
 import SolarBundle from "../Component/SolarBundle";
-
+import TopNavbar from "../Component/TopNavbar";
 const Home = ({}) => {
   return (
     <div className="flex min-h-screen w-full">
@@ -14,18 +13,7 @@ const Home = ({}) => {
       {/* Main Content */}
       <div className="w-full sm:w-[calc(100%-250px)]">
         {/* Topbar */}
-        <div className="flex gap-3 items-center h-[90px] bg-white justify-end px-5 sm:pr-10 py-5">
-          <div className="rounded-lg flex justify-center items-center shadow-md h-10 w-10">
-            <Bell size={24} />
-          </div>
-          <div className="bg-[#e9e9e9] h-12 w-12 rounded-full flex items-center justify-center">
-            <p className="text-lg text-[#909090] font-bold">QA</p>
-          </div>
-          <p className="text-[#000000] text-lg  hidden sm:block">
-            Qamardeen AbdulMalik
-          </p>
-        </div>
-
+<TopNavbar/>
         <div className="bg-[#F5F7FF] p-5">
           <div>
             <h1 className=" text-2xl">Hi, <span className="text-[#273e8e] font-bold"> Qamardeen</span></h1>

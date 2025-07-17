@@ -1,5 +1,6 @@
 import React from "react";
 import { assets } from "../assets/data";
+import { Link } from "react-router-dom";
 
 const SmallBoxes = () => {
   return (
@@ -24,12 +25,12 @@ const SmallBoxes = () => {
         </div>
         <p className="text-[#800080]">Solar Store</p>
       </div>
-      <div className="flex rounded-xl items-center py-4 px-2 shadow-2xl bg-[#ffffff] justify-center gap-6">
+      <Link to="/inverterLoadCalculator" className="flex rounded-xl items-center py-4 px-2 shadow-2xl bg-[#ffffff] justify-center gap-6">
         <div className="bg-[#008000]/20 h-[70px] w-[70px] rounded-full flex justify-center items-center">
           <img src={assets.vec4} className="h-[40px] w-[40px]" alt="" />
         </div>
         <p className="text-[#008000]">Saving Calculator</p>
-      </div>
+      </Link>
     </div>
   );
 };

@@ -1,8 +1,11 @@
 import { Eye, EyeOff } from "lucide-react";
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const LoanWallet = () => {
   const [open, setOpen] = useState(true);
+  const location = useLocation();
+  const path = location.pathname.includes("loanDetails/loanDashboard");
   return (
     <div className="bg-[#273e8e] rounded-lg px-4 py-5 text-white shadow-md">
       {/* Header: Label & Icon */}
@@ -62,7 +65,7 @@ const LoanWallet = () => {
 
         className="bg-white text-[#000]  text-sm rounded-full py-4 mt-4 w-full"
       >
-        Apply for Loan
+        {path ? "Transfer to Wallet":"Apply for Loan"}
       </button>
     </div>
   );
