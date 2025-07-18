@@ -14,6 +14,7 @@ import CreditScore from './Pages/CreditScore'
 import InverterLoadCalculator from './Pages/InverterLoadCalculator'
 import UploadDocement from './Pages/UploadDocement'
 import LoanDashBoard from './Pages/LoanDashBoard'
+import Tools from './Pages/Tools'
 const App = () => {
   return (
     <div>
@@ -28,6 +29,12 @@ const App = () => {
         <Route path='/verification' element={<Otp/>}/>
         <Route path="/creditscore" element={<CreditScore />} />
         <Route path="/loan" element={<LoanPage />} />
+        
+        
+        <Route path="/tools" element={<Tools />} />
+
+
+
         <Route path="/loanDetails/loanDashboard" element={<LoanDashBoard />} />
 
 

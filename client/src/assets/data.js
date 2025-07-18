@@ -1,4 +1,6 @@
 import insta from "../assets/insta.png";
+import solarInverted from "../assets/solarInverted.svg";
+import solar1 from "../assets/solar1.svg";
 import rePayIcon from "../assets/rePayIcon.svg";
 import house1 from "../assets/house1.svg";
 import house2 from "../assets/house2.svg";
@@ -54,7 +56,7 @@ import UserGear from "../assets/UserGear.svg";
 import cart from "../assets/cart.svg";
 
 import battery from "../assets/battery.svg";
-import solar from "../assets/solar.svg";
+import solar from "../assets/solar1.svg";
 import bulb from "../assets/bulb.svg";
 import inverter from "../assets/inverter.svg";
 import mttp from "../assets/mttp.svg";
@@ -68,10 +70,10 @@ import product from "../assets/product.png";
 export const assets = {product,star1,star2,uploadArea, LoanBox,creditNeedle,house1,house2,house3,house4,
   battery,solar,bulb,inverter,mttp,solarfan,surge,connector,light,
     insta, smLogo, sale, vec1, vec2, vec3, vec4, greenTick, b1, b2,line,stars,
-    loginImage, logout, logo, store, loans, userGear, window,
+    loginImage, logout, logo, store, loans, userGear, window,solar,
     shopping, GearSix, sidebar, twitter, whatsApp, yt, loginImageForSm,
     dashboard, usermgt, creditMgt, Loanmgt, loansDisbursement, Transactions,
-    balance, ShopMgt, referral, analytics, settings, UserGear,cart,rePayIcon
+    balance, ShopMgt, referral, analytics, settings, UserGear,cart,rePayIcon,solarInverted,solar1
 };
 
 
@@ -80,7 +82,7 @@ export const Sidebar_links = [
   { name: "Home", link: "/", icon: assets.dashboard, sublinks: [] },
   { name: "Store", link: "/homePage", icon: assets.ShopMgt, sublinks: [] },
   { name: "Loan", link: "/loan", icon: assets.Loanmgt, sublinks: [] },
-  { name: "Tools", link: "/settings", icon: assets.settings, sublinks: [] },
+  { name: "Tools", link: "/tools", icon: assets.settings, sublinks: [] },
   { name: "Cart", link: "/cart", icon: assets.cart, sublinks: [] },
   { name: "More", link: "/credit-score", icon: assets.userGear, sublinks: [] },
 ];
