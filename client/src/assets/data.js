@@ -1,6 +1,8 @@
 import insta from "../assets/insta.png";
 import solarInverted from "../assets/solarInverted.svg";
 import solar1 from "../assets/solar1.svg";
+import support from "../assets/support.svg";
+import kwc from "../assets/kwc.svg";
 import rePayIcon from "../assets/rePayIcon.svg";
 import house1 from "../assets/house1.svg";
 import house2 from "../assets/house2.svg";
@@ -68,7 +70,7 @@ import product from "../assets/product.png";
 
 
 export const assets = {product,star1,star2,uploadArea, LoanBox,creditNeedle,house1,house2,house3,house4,
-  battery,solar,bulb,inverter,mttp,solarfan,surge,connector,light,
+  battery,solar,bulb,inverter,mttp,solarfan,surge,connector,light,kwc,support,
     insta, smLogo, sale, vec1, vec2, vec3, vec4, greenTick, b1, b2,line,stars,
     loginImage, logout, logo, store, loans, userGear, window,solar,
     shopping, GearSix, sidebar, twitter, whatsApp, yt, loginImageForSm,
@@ -84,7 +86,7 @@ export const Sidebar_links = [
   { name: "Loan", link: "/loan", icon: assets.Loanmgt, sublinks: [] },
   { name: "Tools", link: "/tools", icon: assets.settings, sublinks: [] },
   { name: "Cart", link: "/cart", icon: assets.cart, sublinks: [] },
-  { name: "More", link: "/credit-score", icon: assets.userGear, sublinks: [] },
+  { name: "More", link: "/more", icon: assets.userGear, sublinks: [] },
 ];
 
 export const solarBundleData = [

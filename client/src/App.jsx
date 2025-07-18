@@ -15,6 +15,7 @@ import InverterLoadCalculator from './Pages/InverterLoadCalculator'
 import UploadDocement from './Pages/UploadDocement'
 import LoanDashBoard from './Pages/LoanDashBoard'
 import Tools from './Pages/Tools'
+import More from './Pages/More'
 const App = () => {
   return (
     <div>
@@ -46,6 +47,9 @@ const App = () => {
         <Route path="/loanCalculate" element={<LoanCalculation />} />
         <Route path="/linkAccount" element={<LinkAccount />} />
         <Route path="/homePage/product/:id" element={<ProductDetails />} />
+
+        <Route path="/more" element={<More />} />
+
 
       </Routes>
     </div>
