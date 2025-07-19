@@ -1,4 +1,5 @@
 import insta from "../assets/insta.png";
+import telegram from "../assets/telegram.svg";
 import solarInverted from "../assets/solarInverted.svg";
 import solar1 from "../assets/solar1.svg";
 import support from "../assets/support.svg";
@@ -73,7 +74,7 @@ export const assets = {product,star1,star2,uploadArea, LoanBox,creditNeedle,hous
   battery,solar,bulb,inverter,mttp,solarfan,surge,connector,light,kwc,support,
     insta, smLogo, sale, vec1, vec2, vec3, vec4, greenTick, b1, b2,line,stars,
     loginImage, logout, logo, store, loans, userGear, window,solar,
-    shopping, GearSix, sidebar, twitter, whatsApp, yt, loginImageForSm,
+    shopping, GearSix, sidebar, twitter, whatsApp, yt, loginImageForSm,telegram,
     dashboard, usermgt, creditMgt, Loanmgt, loansDisbursement, Transactions,
     balance, ShopMgt, referral, analytics, settings, UserGear,cart,rePayIcon,solarInverted,solar1
 };
