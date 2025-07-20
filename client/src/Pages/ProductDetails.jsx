@@ -5,21 +5,25 @@ import SideBar from "../Component/SideBar";
 import { Bell, Minus, Plus, ShoppingCart } from "lucide-react";
 import { ContextApi } from "../Context/AppContext";
 import LoanPopUp from "../Component/LoanPopUp";
-
+import { BsExclamationTriangle } from "react-icons/bs";
 const ProductDetails = () => {
-  const {  addToCart, cartItems, removeToCart} = useContext(ContextApi);
+  const { addToCart, cartItems, removeToCart } = useContext(ContextApi);
   const { id } = useParams();
   const product = products.find((item) => item.id === id);
   const [showReview, setShowReview] = useState(true);
-  const [balance, setBalance] = useState(false);  //When we true it showes the LoanPopUp and Below Buttons 
-
-
+  const [balance, setBalance] = useState(false); //When we true it showes the LoanPopUp and Below Buttons
 
   return (
     <div className="flex min-h-screen w-full bg-[#F5F7FF]">
       <SideBar />
 
-      {balance && <LoanPopUp />}
+      {balance && <LoanPopUp  icon={<BsExclamationTriangle color="white" size={26}/>}
+  text="Your loan balance is low, kindly apply for one to proceed"
+  link="/"
+  link2="/loan"
+  link1Text="Back"
+  link2Text="Appy for loan"
+  imgBg="bg-[#FFA500]" />}
 
       <div className="flex-1">
         {/* Topbar */}
@@ -68,13 +72,14 @@ const ProductDetails = () => {
               <div className="mt-6 space-y-4">
                 {balance ? (
                   <>
-                    <button
-                      className="w-full py-3 bg-[#273e8e] text-white rounded-full hover:bg-[#273e8e]/90 transition"
-                    >
+                    <button className="w-full py-3 bg-[#273e8e] text-white rounded-full hover:bg-[#273e8e]/90 transition">
                       Buy With Loan
                     </button>
                     <div className="grid grid-cols-2 gap-4">
-                      <button onClick={()=>addToCart(product.id)} className="py-3 border border-[#273e8e] rounded-full hover:bg-[#273e8e]/10 transition">
+                      <button
+                        onClick={() => addToCart(product.id)}
+                        className="py-3 border border-[#273e8e] rounded-full hover:bg-[#273e8e]/10 transition"
+                      >
                         Add To Cart
                       </button>
                       <Link
@@ -88,7 +93,10 @@ const ProductDetails = () => {
                 ) : (
                   <>
                     <div className="grid grid-cols-2 gap-4">
-                      <button onClick={()=>addToCart(product.id)} className="py-3 border border-[#273e8e] rounded-full hover:bg-[#273e8e]/10 transition">
+                      <button
+                        onClick={() => addToCart(product.id)}
+                        className="py-3 border border-[#273e8e] rounded-full hover:bg-[#273e8e]/10 transition"
+                      >
                         Add To Cart
                       </button>
                       <Link
@@ -100,7 +108,8 @@ const ProductDetails = () => {
                     </div>
                     <div className="p-4 mt-6 bg-yellow-50 rounded-lg">
                       <p className="text-yellow-600 text-sm pb-5 sm:text-base">
-                        Don't have the finances to proceed? Take a loan and repay at your convenience
+                        Don't have the finances to proceed? Take a loan and
+                        repay at your convenience
                       </p>
                       <Link
                         to="/loan"
@@ -134,23 +143,33 @@ const ProductDetails = () => {
                   </div>
                   <div className="flex justify-between items-center mt-3">
                     <div className="flex items-center">
-                      <img src={product.progressBar} alt="Progress" className="w-20 h-2 object-contain" />
-                      <p className="text-xs text-gray-500 ml-2">{product.soldText}</p>
+                      <img
+                        src={product.progressBar}
+                        alt="Progress"
+                        className="w-20 h-2 object-contain"
+                      />
+                      <p className="text-xs text-gray-500 ml-2">
+                        {product.soldText}
+                      </p>
                     </div>
-                    <img src={product.rating} alt="Rating" className="w-20 object-contain" />
+                    <img
+                      src={product.rating}
+                      alt="Rating"
+                      className="w-20 object-contain"
+                    />
                   </div>
                 </div>
               </div>
 
               <div className="bg-white border mt-4 rounded-full w-full sm:w-[60%] flex py-1 px-1">
-                {['Details', 'Reviews'].map((tab, i) => (
+                {["Details", "Reviews"].map((tab, i) => (
                   <button
                     key={tab}
                     onClick={() => setShowReview(i === 0)}
                     className={`flex-1 py-2 rounded-full text-sm ${
                       (showReview && i === 0) || (!showReview && i === 1)
-                        ? 'bg-[#273e8e] text-white'
-                        : 'text-gray-500'
+                        ? "bg-[#273e8e] text-white"
+                        : "text-gray-500"
                     }`}
                   >
                     {tab}
@@ -159,7 +178,7 @@ const ProductDetails = () => {
               </div>
 
               <h2 className="text-lg font-medium mt-4 text-gray-800">
-                {showReview ? 'Product Details' : 'Reviews'}
+                {showReview ? "Product Details" : "Reviews"}
               </h2>
 
               <div className="mt-4">
@@ -168,7 +187,11 @@ const ProductDetails = () => {
                     {[...Array(6)].map((_, i) => (
                       <React.Fragment key={i}>
                         <div className="flex items-center gap-3">
-                          <img src={assets.light} className="h-5 w-5" alt="Feature" />
+                          <img
+                            src={assets.light}
+                            className="h-5 w-5"
+                            alt="Feature"
+                          />
                           <p className="text-sm sm:text-base">Longer Life</p>
                         </div>
                         {i < 5 && <hr className="border-gray-200" />}
@@ -180,7 +203,12 @@ const ProductDetails = () => {
                     <div className="p-4 border border-gray-200 rounded-xl">
                       <div className="flex items-center gap-2">
                         {starsArr.map((star, i) => (
-                          <img key={i} src={star} alt="Star" className="h-4 w-4" />
+                          <img
+                            key={i}
+                            src={star}
+                            alt="Star"
+                            className="h-4 w-4"
+                          />
                         ))}
                       </div>
                       <div className="flex justify-between items-center mt-2 text-sm">
@@ -191,12 +219,19 @@ const ProductDetails = () => {
                     <div className="border border-gray-300 rounded-xl p-4">
                       <div className="flex justify-between items-center">
                         <div className="flex items-center gap-3">
-                          <div className="h-12 w-12 flex justify-center items-center rounded-full bg-gray-100 text-gray-500 text-sm">AD</div>
+                          <div className="h-12 w-12 flex justify-center items-center rounded-full bg-gray-100 text-gray-500 text-sm">
+                            AD
+                          </div>
                           <div>
                             <p className="font-medium">AdeWala</p>
                             <div className="flex items-center gap-1">
                               {starsArr.map((star, i) => (
-                                <img key={i} src={star} alt="Star" className="h-3 w-3" />
+                                <img
+                                  key={i}
+                                  src={star}
+                                  alt="Star"
+                                  className="h-3 w-3"
+                                />
                               ))}
                             </div>
                           </div>
@@ -215,12 +250,21 @@ const ProductDetails = () => {
               <div className="h-[70px] p-4 border mt-4 rounded-2xl flex justify-between items-center">
                 Quantity
                 <div className="flex gap-4 items-center">
-                  <button onClick={()=>removeToCart(product.id)} className="h-10 flex justify-center items-center w-10 bg-[#273e8e] rounded-md text-white"><Minus size={20} color="white"/></button>
+                  <button
+                    onClick={() => removeToCart(product.id)}
+                    className="h-10 flex justify-center items-center w-10 bg-[#273e8e] rounded-md text-white"
+                  >
+                    <Minus size={20} color="white" />
+                  </button>
                   {cartItems[product.id] || 0}
-                  <button  onClick={()=>addToCart(product.id)}  className="h-10 flex justify-center items-center w-10 bg-[#273e8e] rounded-md text-white"><Plus size={20} color="white"/></button>
+                  <button
+                    onClick={() => addToCart(product.id)}
+                    className="h-10 flex justify-center items-center w-10 bg-[#273e8e] rounded-md text-white"
+                  >
+                    <Plus size={20} color="white" />
+                  </button>
                 </div>
               </div>
-
             </div>
           </div>
         </div>

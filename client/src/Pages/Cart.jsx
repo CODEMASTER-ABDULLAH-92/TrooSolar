@@ -6,6 +6,7 @@ import SideBar from "../Component/SideBar";
 import { assets } from "../assets/data";
 import { RxCrossCircled } from "react-icons/rx";
 import { GiCheckMark } from "react-icons/gi";
+import TopNavbar from "../Component/TopNavbar";
 const Cart = () => {
   const [checkout, setCheckOut] = useState(true); // Controls summary vs delivery view
   const [checkoutPayment, setCheckOutPayment] = useState(false); // Controls final modal
@@ -23,17 +24,7 @@ const Cart = () => {
       {/* Main Content */}
       <main className="flex flex-col w-full">
         {/* Top Bar */}
-        <header className="flex items-center justify-end h-[90px] bg-white px-5 sm:pr-10 py-5 gap-3 shadow-sm">
-          <button className="h-10 w-10 flex items-center justify-center rounded-lg shadow-md hover:bg-gray-100">
-            <Bell size={24} />
-          </button>
-          <div className="h-12 w-12 flex items-center justify-center rounded-full bg-[#e9e9e9]">
-            <p className="text-lg text-[#909090] font-bold">QA</p>
-          </div>
-          <p className="text-[#000] text-lg font-bold hidden sm:block">
-            Qamardeen AbdulMalik
-          </p>
-        </header>
+<TopNavbar/>
 
         {/* Page Content */}
         <section className="flex flex-col lg:flex-row justify-between gap-5 px-5 py-5 w-full">

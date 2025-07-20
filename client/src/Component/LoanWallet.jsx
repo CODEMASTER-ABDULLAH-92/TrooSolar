@@ -34,7 +34,7 @@ const LoanWallet = () => {
       </h1>
 
       {/* Loan Info + Countdown */}
-      <div className="flex flex-col min-h-[80px] sm:flex-row justify-between items-start sm:items-center bg-[#1d3073] py-3 px-3 rounded-md gap-3">
+      <div className="flex  min-h-[80px] flex-row justify-between items-start sm:items-center bg-[#1d3073] py-3 px-3 rounded-md gap-3">
         {/* Loan Info */}
         <div className="flex flex-col text-sm leading-tight">
           <p className="text-white/80">You have no loans</p>

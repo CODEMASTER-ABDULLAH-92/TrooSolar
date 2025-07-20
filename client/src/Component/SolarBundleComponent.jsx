@@ -1,5 +1,5 @@
 import React from "react";
-const SolarBundle = ({ image,
+const SolarBundleComponent = ({ image,
   heading,
   price,
   oldPrice,
@@ -7,6 +7,7 @@ const SolarBundle = ({ image,
   soldText,
   progressBar,
   rating,
+  bundleTitle,
   borderColor}) => {
   return (
     <div
@@ -14,10 +15,12 @@ const SolarBundle = ({ image,
       style={{ border: `2px solid ${borderColor}` }}
     >
       <img src={image} alt="Solar bundle product" className="w-full h-auto rounded-md mb-3" />
+      {bundleTitle && <h2 className="text-[16px] font-[400] mb-2">{bundleTitle}</h2>}
+      <hr className="mb-3 text-gray-400/40" />
 
       <h2 className="text-[14px] font-[500] mb-2">{heading}</h2>
 
-      <hr className="mb-3" />
+      <hr className="mb-3 text-gray-400/40" />
 
       <div className="flex justify-between items-start">
         {/* Left: Pricing */}
@@ -35,7 +38,7 @@ const SolarBundle = ({ image,
         <div className="space-y-2 text-right">
           <div>
             <p className="text-sm text-gray-400 mb-1">{soldText}</p>
-            <img src={progressBar} alt="Progress bar" className="w-[100px] h-2 object-contain" />
+        {progressBar && <img src={progressBar} alt="Progress bar" className="w-[100px] h-2 object-contain" /> }    
           </div>
           <img src={rating} alt="Customer rating" className="w-[100px] object-contain" />
         </div>
@@ -44,4 +47,4 @@ const SolarBundle = ({ image,
   );
 };
 
-export default SolarBundle;
+export default SolarBundleComponent;

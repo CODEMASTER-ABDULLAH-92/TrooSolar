@@ -16,6 +16,9 @@ import UploadDocement from './Pages/UploadDocement'
 import LoanDashBoard from './Pages/LoanDashBoard'
 import Tools from './Pages/Tools'
 import More from './Pages/More'
+import ProductBundle from './Pages/ProductBundleDetailPage'
+import SolarBundle from './Pages/SolarBundle'
+import SolarBuilder from './Pages/SolarBuilder'
 const App = () => {
   return (
     <div>
@@ -34,20 +37,20 @@ const App = () => {
         
         <Route path="/tools" element={<Tools />} />
 
-
-
         <Route path="/loanDetails/loanDashboard" element={<LoanDashBoard />} />
-
-
         <Route path="/uploadDocument" element={<UploadDocement />} />
         <Route path="/uploadDetails" element={<UploadDocement />} />
         <Route path="/loanDetails" element={<UploadDocement />} />
         
         
+
         <Route path="/loanCalculate" element={<LoanCalculation />} />
         <Route path="/linkAccount" element={<LinkAccount />} />
         <Route path="/homePage/product/:id" element={<ProductDetails />} />
+        <Route path="/productBundle/details/:id" element={<ProductBundle />} />
 
+<Route path="/solar-bundles" element={<SolarBundle/>} />
+<Route path="/solar-builder" element={<SolarBuilder/>} />
         <Route path="/more" element={<More />} />
 
 

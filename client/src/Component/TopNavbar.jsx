@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 const TopNavbar = () => {
     const name = "Qamardeen AbdulMalik"
     const location = useLocation();
-    const changeBg = location.pathname.includes("/tools")
+    const changeBg = location.pathname.includes("/tools") || location.pathname.includes("/homePage") || location.pathname.includes("/solar-bundles");
   return (
     <div>
         <header className={`flex gap-3 items-center h-[90px] justify-end px-5 sm:pr-10 py-5 ${changeBg ? "bg-[#273e8e]":"bg-white"}`}>

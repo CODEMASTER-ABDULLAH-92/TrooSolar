@@ -7,7 +7,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import LoanRepaymentCard from "../Component/LoanRepaymentCard";
 import LoanPopUp from "../Component/LoanPopUp";
 import { GiCheckMark } from "react-icons/gi";
-import { BsExclamationTriangle } from "react-icons/bs";
+
 // Document types for the select dropdown
 const documentTypes = [
   { value: "", label: "-- Select a document --" },
@@ -180,8 +180,8 @@ const UploadDocument = () => {
                     name="beneficiaryName"
                     label="Beneficiary Name"
                     placeholder="Enter Beneficiary Name"
-                    value={formData.beneficiaryName}
-                    onChange={handleChange}
+                    // value={formData.beneficiaryName}
+                    // onChange={handleChange}
                     required
                   />
                   <Input
@@ -189,8 +189,8 @@ const UploadDocument = () => {
                     name="beneficiaryRelationship"
                     label="Beneficiary Relationship"
                     placeholder="Enter Beneficiary Relationship"
-                    value={formData.beneficiaryRelationship}
-                    onChange={handleChange}
+                    // value={formData.beneficiaryRelationship}
+                    // onChange={handleChange}
                     required
                   />
                   <Input
@@ -199,8 +199,8 @@ const UploadDocument = () => {
                     label="Beneficiary Email"
                     placeholder="Enter Beneficiary Email"
                     type="email"
-                    value={formData.beneficiaryEmail}
-                    onChange={handleChange}
+                    // value={formData.beneficiaryEmail}
+                    // onChange={handleChange}
                     required
                   />
                   <Input
@@ -209,8 +209,8 @@ const UploadDocument = () => {
                     label="Beneficiary Phone Number"
                     placeholder="Enter Beneficiary Phone Number"
                     type="tel"
-                    value={formData.beneficiaryPhone}
-                    onChange={handleChange}
+                    // value={formData.beneficiaryPhone}
+                    // onChange={handleChange}
                     required
                   />
                 </div>

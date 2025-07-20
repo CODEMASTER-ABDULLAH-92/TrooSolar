@@ -1,5 +1,7 @@
 import { createContext, useState } from "react";
 import { products } from "../assets/data";
+import { solarBundleData } from "../assets/data";
+
 import toast from "react-hot-toast";
 
 export const ContextApi = createContext();
@@ -46,7 +48,7 @@ export const ContextProvider = (props) => {
   }
   
   const value = {
-    products,
+    products,solarBundleData,
     cartItems,
     addToCart,
     removeToCart,

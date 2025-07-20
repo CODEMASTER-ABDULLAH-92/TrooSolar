@@ -7,6 +7,7 @@ import Product from "../Component/Product";
 import { products } from "../assets/data";
 import { Link } from "react-router-dom";
 import { ContextApi } from "../Context/AppContext";
+import TopNavbar from "../Component/TopNavbar";
 
 const HomePage = () => {
   const {filteredResults} = useContext(ContextApi);
@@ -19,21 +20,8 @@ const HomePage = () => {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-y-auto">
-        {/* Top Navigation Section */}
-        <div className="flex bg-[#273e8e] justify-end items-center gap-4 px-6 py-4 shadow-md">
-          <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-white shadow-md">
-            <Bell size={20} />
-          </div>
-          <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-white shadow-md">
-            <ShoppingCart size={20} />
-          </div>
-          <div className="h-12 w-12 flex items-center justify-center rounded-full bg-[#e9e9e9]">
-            <p className="text-lg font-bold text-[#909090]">QA</p>
-          </div>
-          <p className="hidden sm:block text-white text-lg font-semibold">
-            Qamardeen AbdulMalik
-          </p>
-        </div>
+
+     <TopNavbar/>
 
         {/* Content Wrapper */}
         <div className="bg-[#273e8e] border-l-2 border-gray-500 px-6 py-6">
