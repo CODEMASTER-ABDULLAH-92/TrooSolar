@@ -15,7 +15,9 @@ const Items = () => {
   ];
 
   return (
-    <div className="w-full mt-4 overflow-x-auto">
+    <>
+    {/* Desktop view  */}
+    <div className="w-full sm:block hidden mt-4 overflow-x-auto">
       <div className="flex gap-4 px-4 py-4  min-w-fit">
 
         {items.map((item, index) => (
@@ -39,6 +41,30 @@ const Items = () => {
         ))}
       </div>
     </div>
+
+    {/* Mobile view  */}
+  <div className="w-full sm:hidden block mt-4 px-4">
+  <div className="grid grid-cols-4 gap-4">
+    {items.map((item, index) => (
+      <Link to={`/product/${item.category}`} key={index}>
+        <div className="flex flex-col items-center justify-center w-full h-[140px] bg-white rounded-2xl shadow-sm">
+          <div className="flex items-center justify-center w-[70px] h-[70px] rounded-full bg-[#0000ff]/20">
+            <img
+              src={item.image}
+              alt={item.text}
+              className="h-[50px] w-[50px] object-contain"
+            />
+          </div>
+          <h1 className="mt-2 text-center text-blue-700 text-xs font-medium">
+            {item.text}
+          </h1>
+        </div>
+      </Link>
+    ))}
+  </div>
+</div>
+
+    </>
   );
 };
 

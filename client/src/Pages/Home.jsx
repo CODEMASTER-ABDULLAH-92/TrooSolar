@@ -10,6 +10,7 @@ import { Bell } from "lucide-react";
 import Product from "../Component/Product";
 import { Link } from "react-router-dom";
 import SolarBundleComponent from "../Component/SolarBundleComponent";
+import HrLine from "../Component/MobileSectionResponsive/HrLine";
 const Home = ({}) => {
   const [showWallet, setShowWallet] = useState(true);
   return (
@@ -101,12 +102,7 @@ const Home = ({}) => {
               various homes and uses, or you can build your custom builder from
               custom builder
             </p>
-            <div className="flex items-center gap-2">
-              <h1 className="text-xl block sm:hidden font-medium">
-                Hottest Deals
-              </h1>
-              <div className="flex-1 h-px sm:hidden bg-gray-400/40" />
-            </div>
+            <HrLine text={"Hottest Deals"}/>
           </div>
           <div className="my-4 hidden sm:flex gap-5 overflow-x-auto pb-4 scrollbar-hide">
             {solarBundleData.slice(0,4).map((item, index) => (
@@ -128,7 +124,7 @@ const Home = ({}) => {
           </div>
 
 
-          <div className="my-4 sm:hidden grid grid-cols-1 gap-5 place-items-center ">
+          <div className="my-4 sm:hidden grid grid-cols-2 gap-5 place-items-center ">
             {products.map((item, index) => (
             <Link to={`/homePage/product/${item.id}`}>
                 <Product
