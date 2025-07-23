@@ -6,7 +6,7 @@ import InvertedLoadCalculator from '../Component/InverterLoadCalculator';
 import SolarPanelCalculator from '../Component/SolarPanelCalculator';
 import SolarSavingCalculator from '../Component/SolarSavingCalculator';
 import LoanCalculator from '../Component/LoanCalculator';
-
+import SmallBoxes from "../Component/SmallBoxes"
 const toolsData = [
   {
     id: 'inverter',
@@ -60,23 +60,28 @@ const Navbar = ({ activeTool, setActiveTool }) => {
 
 const Tools = () => {
   const [activeTool, setActiveTool] = useState('inverter'); // Default tool
-
   const selectedTool = toolsData.find((tool) => tool.id === activeTool);
 
   return (
+    <>
+    {/* Desktop View  */}
     <div className="relative flex min-h-screen overflow-hidden">
       {/* Sidebar */}
       <SideBar />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        <TopNavbar />
+        {/* <TopNavbar /> */}
         <div className="flex flex-col gap-6 flex-1">
           <Navbar activeTool={activeTool} setActiveTool={setActiveTool} />
           {selectedTool?.component}
         </div>
       </div>
     </div>
+
+    {/* Mobile View  */}
+<SmallBoxes/>
+    </>
   );
 };
 

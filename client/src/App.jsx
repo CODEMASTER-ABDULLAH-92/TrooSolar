@@ -11,7 +11,6 @@ import LinkAccount from "./Pages/LinkAccount";
 import LoanCalculation from "./Pages/LoanCalCulation";
 import SpecificProduct from "./Pages/SpecificProduct";
 import CreditScore from "./Pages/CreditScore";
-import InverterLoadCalculator from "./Pages/InverterLoadCalculator";
 import UploadDocement from "./Pages/UploadDocement";
 import LoanDashBoard from "./Pages/LoanDashBoard";
 import Tools from "./Pages/Tools";
@@ -20,6 +19,7 @@ import ProductBundle from "./Pages/ProductBundleDetailPage";
 import SolarBundle from "./Pages/SolarBundle";
 import SolarBuilder from "./Pages/SolarBuilder";
 import TermsPage from "./Component/MobileSectionResponsive/TermsPage";
+import InverterLoadCalculator from "./Component/InverterLoadCalculator";
 const App = () => {
   return (
     <div>

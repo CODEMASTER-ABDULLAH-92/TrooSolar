@@ -15,7 +15,7 @@ const CreditScore = () => {
   return (
     <>
     {/* Desktop View  */}
-    <div className="sm:flex hidden min-h-full w-full overflow-clip">
+    <div className="sm:flex hidden  min-h-full w-full overflow-clip">
       <SideBar />
 
       {/* Main Content */}
@@ -97,23 +97,23 @@ const CreditScore = () => {
 
     {/* Mobile View  */}
 
-    <div className="flex sm:hidden min-h-full w-full overflow-clip">
+    <div className="flex sm:hidden relative min-h-full w-full overflow-clip">
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col">
-        <main className="bg-[#F5F7FF] flex-1 p-6 sm:p-10">
-          <div className="mb-6">
+      <div className="flex-1 flex relative flex-col">
+        <main className="bg-[#F5F7FF] relative flex-1  sm:p-10">
+          <div className="mb-6 flex absolute top-10 z-20">
             <Link
               to="/loanCalculate"
               className="text-[#273e8e] underline hover:text-[#1e2f6b] transition-colors"
             >
-              <ChevronLeft/>
+              <ChevronLeft color="white"/>
             </Link>
+          <p className="text-white absolute left-56">CreditScore</p>
           </div>
-          <p className="text-white">Credit Score</p>
           <div className="flex flex-col gap-6">
             {/* Left Section */}
-            <div className="bg-[#273e8e] flex justify-center items-center rounded-2xl w-full lg:w-1/2 aspect-square max-h-[100%]">
+            <div className="bg-[#273e8e] flex justify-center items-center  w-full lg:w-1/2 aspect-square max-h-[100%]">
               <img
                 src={assets.creditNeedle}
                 className="h-[281px] w-[281px] object-contain"
@@ -123,7 +123,7 @@ const CreditScore = () => {
 
             {/* Right Section */}
             {afterTerm ? (
-              <div className="w-1/2">
+              <div className="w-full -mt-36">
                 <Terms />
                 <div className="space-y-4 mt-4 pt-4  flex-shrink-0">
                   <label
@@ -149,7 +149,7 @@ const CreditScore = () => {
                 </div>
               </div>
             ) : (
-              <div className="w-1/2 space-y-3">
+              <div className="w-full p-2 rounded-t-2xl -mt-24 bg-white space-y-3">
                 <LoanCard />
 
                 <div className="p-4 border rounded-2xl">

@@ -5,10 +5,13 @@ import { Bell, X } from "lucide-react";
 import { assets } from "../assets/data";
 import { Link, useNavigate } from "react-router-dom";
 import Terms from "../Component/Terms";
+import TopNavbar from "../Component/TopNavbar"
 
 const LoanPage = () => {
   const [showLoan, setShowLoan] = useState(true);
   return (
+    <>
+    {/* Desktop View  */}
     <div className={`relative flex min-h-screen overflow-hidden ${!showLoan ? "bg-black/40" : "bg-[#F5F7FF]"}`}>
       {/* Sidebar */}
       <SideBar />
@@ -16,17 +19,7 @@ const LoanPage = () => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Header */}
-        <div className={ `${!showLoan ? "bg-black/40" : "bg-white"} flex items-center justify-end gap-3 h-[90px] bg-white px-5 sm:pr-10 py-5 shadow-sm ` }>
-          <div className="rounded-lg flex justify-center items-center shadow-md h-10 w-10 bg-white">
-            <Bell size={24} />
-          </div>
-          <div className="bg-[#e9e9e9] h-12 w-12 rounded-full flex items-center justify-center">
-            <p className="text-lg text-[#909090] font-bold">QA</p>
-          </div>
-          <p className="text-[#000000] text-lg font-bold hidden sm:block">
-            Qamardeen AbdulMalik
-          </p>
-        </div>
+        <TopNavbar/>
 
         {/* Body */}
         <div className="flex flex-col lg:flex-row gap-6 p-5 flex-1">
@@ -58,6 +51,48 @@ const LoanPage = () => {
         </div>
       )}
     </div>
+    {/* Mobile View  */}
+
+    <div className={`relative flex min-h-screen overflow-hidden ${!showLoan ? "bg-black/40" : "bg-[#F5F7FF]"}`}>
+      {/* Sidebar */}
+      <SideBar />
+
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col">
+        {/* Header */}
+        <TopNavbar/>
+
+        {/* Body */}
+        <div className="flex flex-col lg:flex-row gap-6 p-5 flex-1">
+          {/* Left Section */}
+          <div className="lg:w-1/2 w-full">
+            <h1 className="text-2xl font-semibold mb-1">Loans</h1>
+            <p className="text-gray-500 mb-4">Welcome to the dashboard</p>
+            <LoanWallet />
+          </div>
+
+          {/* Right Section */}
+          <div className="lg:w-1/2 w-full rounded-xl p-6 flex flex-col justify-center items-center">
+            <img src={assets.LoanBox} alt="LoanBox" className="w-40 h-40 object-contain mb-4" />
+            <p className="text-gray-600 mb-4">You have not taken any loan yet</p>
+            <button
+              onClick={() => setShowLoan(false)}
+              className="px-6 py-3 rounded-md bg-[#273e8e] text-white hover:bg-[#1d2f6b] transition"
+            >
+              Apply Now
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Modal */}
+      {!showLoan && (
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
+          <Terms link="/linkAccount" />
+        </div>
+      )}
+    </div>
+    </>
   );
 };
 

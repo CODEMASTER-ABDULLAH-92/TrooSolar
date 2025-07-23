@@ -62,7 +62,9 @@ const InverterLoadCalculator = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f5f6ff] px-10 py-6">
+    <>
+    {/* Desktop View  */}
+    <div className="min-h-screen sm:block hidden bg-[#f5f6ff] px-10 py-6">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-[#273e8e]">Inverter Load Calculator</h1>
@@ -164,6 +166,111 @@ const InverterLoadCalculator = () => {
         </div>
       </div>
     </div>
+
+    {/* Mobile View  */}
+    <div className="min-h-screen bg-[#f5f6ff] sm:hidden block  py-6">
+      {/* Header */}
+      <div className="mb-8 px-10">
+      </div>
+
+      {/* Main Grid */}
+      <div className="flex flex-col gap-6 w-full">
+        {/* Room Options */}
+        <div className="flex-row flex px-10 gap-4">
+          {houseData.map((house) => (
+            <div
+              key={house.id}
+              className="bg-white p-4 flex flex-col justify-center items-center h-[130px] rounded-2xl border-2 border-[#273e8e] hover:shadow-md cursor-pointer transition"
+            >
+              <img src={house.image} alt={house.name} className="w-8 h-8 object-contain" />
+              <p className="mt-2 text-sm font-medium text-gray-700">{house.name}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-xl px-10 font-medium">
+        Inverter Load Calculator for 1 bedroom Apartment
+        </p>
+        <p className="text-gray-500 mt-2 px-10 max-w-2xl text-base">An inverter load calculator helps estimate the total power needed to run selected appliances. It guides you in choosing the right inverter and battery size for efficient backup.
+        </p>
+        {/* Appliance Table */}
+        <div className="px-10">
+          {/* Search */}
+          <div className="flex items-center w-full border-2 border-gray-300 rounded-xl bg-white px-4 py-3">
+            <Search className="text-gray-400 w-6 h-6 mr-3" />
+            <input
+              type="text"
+              className="w-full outline-none text-xl bg-transparent placeholder:text-gray-400"
+              placeholder="Search appliances"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+
+          {/* Table Headers */}
+          <div className="grid grid-cols-5 font-medium text-gray-700 text-center">
+            <p>Appliance</p>
+            <p>Power (W)</p>
+            <p>Quantity</p>
+            <p>Total (W)</p>
+            <p>Usage (hrs)</p>
+          </div>
+
+          {/* Appliance List */}
+          <div className="rounded-2xl border bg-white p-4 divide-y">
+            {filteredAppliances.map((item, index) => {
+              const totalPower = item.power * item.quantity;
+              
+              return (
+                <div
+                  key={index}
+                  className="grid grid-cols-5 items-center text-center py-3 text-sm"
+                >
+                  <p className="font-normal">{item.name}</p>
+                  <p className="font-medium">{item.power}</p>
+
+                  <div className="flex justify-center items-center gap-2">
+                    <button 
+                      className="bg-[#273e8e] text-white rounded p-1.5 cursor-pointer"
+                      onClick={() => updateQuantity(index, item.quantity - 1)}
+                    >
+                      <Minus size={16} />
+                    </button>
+                    <span className="w-6 text-center">{item.quantity}</span>
+                    <button 
+                      className="bg-[#273e8e] text-white rounded p-1.5 cursor-pointer"
+                      onClick={() => updateQuantity(index, item.quantity + 1)}
+                    >
+                      <Plus size={16} />
+                    </button>
+                  </div>
+
+                  <p className="font-medium">{totalPower}</p>
+
+                  <input
+                    type="number"
+                    value={item.hours}
+                    onChange={(e) => updateHours(index, parseInt(e.target.value) || 0)}
+                    className="w-16 mx-auto px-2 py-1 text-center border rounded bg-gray-100"
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Summary Box */}
+        <div className="">
+          <div className="bg-[#273e8e] text-white px-2 py-6 flex  gap-4 shadow-lg">
+            <h2 className="text-xl font-semibold w-[40%] text-center">Total Output</h2>
+            <div className="bg-white h-[80px] w-[60%] rounded-xl px-1 flex justify-center items-center gap-2 text-[#273e8e] shadow-inner">
+              <span className="text-4xl font-bold">{totalOutput}</span>
+              <span className="text-lg">Watt</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </>
   );
 };
 
