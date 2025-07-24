@@ -38,7 +38,7 @@ const ActiveLoan = () => {
 
             {/* Right Section */}
             <div className="lg:w-1/2 w-full mt-10">
-              <p>Recen Loan</p>
+              <p>Recent Loan</p>
               <div className="mt-2">
                 {toggle ? (
                   <div>

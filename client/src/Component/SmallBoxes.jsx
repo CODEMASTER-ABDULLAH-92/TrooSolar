@@ -45,7 +45,7 @@ const SmallBoxes = ({text}) => {
           className="flex sm:flex-row flex-col rounded-xl items-center py-4 px-2 shadow-xl bg-white hover:shadow-lg transition-shadow duration-300 justify-center gap-6"
         >
           <div 
-            className={`bg-[${item.color}]/20 h-[70px] w-[70px] rounded-full flex justify-center items-center`}
+            className={`bg-[${item.color}]/20 h-[80px] w-[80px] rounded-full flex justify-center items-center`}
             style={{ backgroundColor: `${item.color}20` }} // Fallback for Tailwind dynamic colors
           >
             <img src={item.icon} className="h-[40px] w-[40px]" alt={item.title} />

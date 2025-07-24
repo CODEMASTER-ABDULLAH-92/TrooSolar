@@ -45,7 +45,7 @@ const Auth = () => {
             loading="lazy"
           />
           <div className="absolute bottom-24 left-12 text-white w-[80%]">
-            <p className="text-lg font-medium leading-relaxed">
+            <p className="text-lg  leading-relaxed">
               Providing affordable, sustainable and reliable <br />
               solar energy solutions for millions <br />
               of Nigerians
@@ -158,7 +158,7 @@ const Auth = () => {
                 {isLogin ? "Login" : "Create Account"}
               </button>
 
-              <p className="text-center text-sm">
+              <p className="text-start text-sm">
                 {isLogin
                   ? "Don't have an account?"
                   : "I already have an account"}
@@ -281,7 +281,7 @@ const Auth = () => {
             {isLogin ? "Login" : "Create Account"}
           </button>
 
-          <p className={isLogin ? "text-start text-sm" : "text-center text-sm"}>
+          <p className={isLogin ? "text-start text-sm" : "text-start text-sm"}>
             {isLogin ? "I don't have an account" : "I already have an account"}
           </p>
 

@@ -97,7 +97,7 @@ export const solarBundleData = [
     soldText: "12/50",
     progressBar: assets.line,
     rating: assets.stars,
-    borderColor: "#800080",
+    borderColor: "#FF0000",
     heading:"2 Newman Inverters + 1 Solar panel + 4 LED bulbs",
     
     bundleTitle: "Troosolar Mini bundle",
@@ -213,7 +213,7 @@ export const solarBundleData = [
     soldText: "12/50",
     progressBar: assets.line,
     rating: assets.stars,
-    borderColor: "#800080",
+    borderColor: "#FF0000",
     
 
     heading:"2 Newman Inverters + 1 Solar panel + 4 LED bulbs",

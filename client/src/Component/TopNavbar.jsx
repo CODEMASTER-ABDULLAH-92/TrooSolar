@@ -24,8 +24,8 @@ const TopNavbar = () => {
         >
           <Bell size={24} />
         </button>
-        <div className="bg-[#e9e9e9] h-12 w-12 rounded-full flex items-center justify-center">
-          <p className="text-lg text-[#909090] font-bold">QA</p>
+        <div className="bg-[#e9e9e9] h-16 w-16 rounded-full flex items-center justify-center">
+          <p className="text-[30px] text-[#909090] font-medium">QA</p>
         </div>
         <p
           className={`${

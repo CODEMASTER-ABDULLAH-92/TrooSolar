@@ -35,7 +35,7 @@ const Home = ({}) => {
                       Qamardeen
                     </span>
                   </h1>
-                  <p className="mt-1">Welcome to Your Dashboard</p>
+                  <p className="mt-1">Welcome to your dashboard</p>
                 </div>
               </div>
             </div>
@@ -47,7 +47,7 @@ const Home = ({}) => {
             </button>
           </div>
 
-          <div className="grid   md:grid-cols-2 grid-cols-1 xl:grid-cols-3 gap-3 mt-4">
+          <div className="grid items-center  md:grid-cols-2 grid-cols-1 xl:grid-cols-3 gap-5 mt-4">
             <div className="flex justify-start items-center sm:hidden gap-3 pt-2">
               <button
                 onClick={() => setShowWallet(!showWallet)}
@@ -97,7 +97,7 @@ const Home = ({}) => {
             <h1 className="text-xl sm:block hidden font-[500]">
               Solar Bundles
             </h1>
-            <p className="text-gray-500 text-sm sm:block hidden sm:text-base">
+            <p className="text-gray-500 pt-4 text-sm w-1/2 sm:block hidden sm:text-base">
               You can select from one of our custom bundles tailored towards
               various homes and uses, or you can build your custom builder from
               custom builder
