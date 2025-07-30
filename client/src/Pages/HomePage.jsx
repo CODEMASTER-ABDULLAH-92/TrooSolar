@@ -27,14 +27,14 @@ const HomePage = () => {
           <TopNavbar />
 
           {/* Content Wrapper */}
-          <div className="bg-[#273e8e] border-l-2 border-gray-500 px-6 py-6">
+          <div className="bg-[#273e8e]  px-6 py-6">
             {/* Header and Search */}
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-6">
               <div>
-                <h1 className="text-2xl font-semibold text-white">
+                <h1 className="text-2xl  text-white">
                   Solar Store
                 </h1>
-                <p className="text-white">Welcome to the dashboard</p>
+                <p className="text-white font-light">Welcome to the dashboard</p>
               </div>
               <SearchBar />
             </div>

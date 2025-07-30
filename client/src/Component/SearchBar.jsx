@@ -62,12 +62,12 @@ const SearchBar = () => {
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={() => setIsDropdownOpen((prev) => !prev)}
-          className="flex items-center px-4 py-3 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+          className="flex items-center gap-8 pl-4 py-3 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
         >
           <span className="mr-2 whitespace-nowrap">{selectedOption}</span>
           <ChevronDown
-            size={16}
-            className={`transition-transform ${
+            size={26}
+            className={`transition-transform text-gray-400 ${
               isDropdownOpen ? "rotate-180" : ""
             }`}
           />
