@@ -21,12 +21,12 @@ const Support = () => {
   const filteredTickets = ticketsData.filter(ticket => ticket.status === activeTab);
   const [newTicket,setNewTicket] = useState(false);
   return (
-    <div className="min-h-full bg-gray-100 flex items-center justify-center p-4 font-sans">
-      <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-2xl">
+    <div className="min-h-screen  flex items-center justify-center p-4 font-sans">
+      <div className="bg-white rounded-xl shadow-lg border-gray-300 border p-6 w-full max-w-2xl">
         {
           newTicket ? <NewTicket/> : <div>
             {/* Header */}
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
+        <h2 className="text-xl text-gray-800 mb-6 text-center">
           Support Tickets
         </h2>
 
@@ -36,7 +36,7 @@ const Support = () => {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`flex-1 py-2 px-2 text-sm font-medium transition duration-200 text-center rounded-full ${
+              className={`flex-1 py-2 px-2 text-xs  transition duration-200 text-center rounded-full ${
                 activeTab === tab
                   ? 'bg-[#273e8e] text-white'
                   : 'text-gray-400'
@@ -53,18 +53,18 @@ const Support = () => {
             filteredTickets.map(({ id, date, status }) => (
               <div
                 key={id}
-                className="flex items-center justify-between bg-gray-50 rounded-lg p-4 border transition-shadow duration-200 hover:shadow-sm cursor-pointer"
+                className="flex items-center justify-between bg-white rounded-2xl p-4 border-gray-400 border transition-shadow duration-200 hover:shadow-sm cursor-pointer"
               >
                 <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-black/20 rounded-full">
+                  <div className="p-3 bg-[#cccccc] rounded-full">
                     <PiTicket size={24} className="text-black" />
                   </div>
-                  <div>
-                    <p className="text-gray-800 font-medium">Ticket ID - {id}</p>
-                    <p className="text-gray-500 text-xs">{date}</p>
+                  <div className='space-y-2'>
+                    <p className="text-[#000000]">Ticket ID - {id}</p>
+                    <p className="text-[#000000] text-xs">{date}</p>
                   </div>
                 </div>
-                <span className="bg-[#FFA50033] text-[#FFA500] text-sm px-3.5 py-2 rounded-xl">
+                <span className="bg-[#FFA50033] text-[#FFA500]  px-1.5 py-1.5 rounded-[10px] text-xs">
                   {status}
                 </span>
               </div>

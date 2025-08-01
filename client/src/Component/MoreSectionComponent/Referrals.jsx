@@ -24,7 +24,7 @@ const Referrals = () => {
     <main className="bg-[#ffffff] h-full rounded-2xl border border-gray-400 w-full p-5">
       <h1 className="text-center text-lg font-medium pb-5">Referral Details</h1>
 
-      <div className="bg-[#273e8e] rounded-lg px-4 py-5 text-white shadow-md">
+      <div className="bg-[#273e8e] rounded-2xl px-4 py-5 text-white shadow-md">
         {/* Header: Label & Icon */}
         <div className="flex justify-between items-center mb-2">
           <p className="text-white/70 text-sm">Referral Wallet</p>
@@ -51,7 +51,7 @@ const Referrals = () => {
         </h1>
 
         {/* Loan Info + Referral */}
-        <div className="flex flex-col min-h-[80px] sm:flex-row justify-between items-start sm:items-center bg-[#1d3073] py-3 px-3 rounded-md gap-3">
+        <div className="flex  flex-col min-h-[80px] sm:flex-row justify-between items-start sm:items-center bg-[#1d3073] py-3 px-5 border-gray-500 rounded-xl border gap-3">
           <div className="flex flex-col text-sm leading-tight">
             <p className="text-white/50 pb-3">Referral Code</p>
             <p className="text-white">XD123KC</p>
@@ -71,7 +71,7 @@ const Referrals = () => {
         </button>
       </div>
 
-      <div className="py-4 px-4 w-full border-dashed border-[#273e8e] border-[2px] rounded-2xl mt-4 bg-gray-400/2 text-center text-md text-[#273e8e]">
+      <div className="py-4 px-4 w-full border-dashed border-[#273e8e] border-[2px] rounded-2xl mt-4 bg-[#e9ebf3] text-center text-sm text-[#273e8e]">
         <p>Earn 30% referral bonus from the people you refer</p>
       </div>
 
