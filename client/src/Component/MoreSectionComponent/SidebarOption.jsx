@@ -15,7 +15,7 @@ const SidebarOption = ({ icon: Icon, label, image, colorBg }) => {
         {Icon && (
           <Icon className={`w-8 h-8 rounded-md ${colorBg} p-1.5 text-white`} />
         )}
-        <span className="font-medium text-gray-800">{label}</span>
+        <span className=" text-gray-800">{label}</span>
       </div>
       <ChevronRight className="w-4 h-4 text-gray-400" />
     </div>

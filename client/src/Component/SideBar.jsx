@@ -9,7 +9,7 @@ const SideBar = () => {
   const [activeLink, setActiveLink] = useState("/dashboard");
 
   return (
-    <div className="hidden overflow-clip max-w-[220px] sm:block min-h-lvh pb-10  transition-all duration-300 bg-[#273E8E] text-white"
+    <div className="hidden overflow-clip max-w-[250px] sm:block min-h-lvh pb-10  transition-all duration-300 bg-[#273E8E] text-white"
       style={{
         scrollbarWidth: "thin",
         scrollbarColor: "white #273E8E",

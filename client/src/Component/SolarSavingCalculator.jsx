@@ -1,14 +1,16 @@
 import { ChevronDown, ChevronLeft } from "lucide-react";
 import React from "react";
-import HrLine from "../Component/MobileSectionResponsive/HrLine"
+import HrLine from "../Component/MobileSectionResponsive/HrLine";
 const SolarSavingCalculator = () => {
   return (
     <>
       {/* Desktop View  */}
       <div>
         <div className="min-h-screen hidden sm:block bg-[#f5f6ff] px-8 py-10">
-          <h1 className="text-3xl mb-2">Solar Savings Calculator</h1>
-          <p className="text-sm text-gray-500 max-w-xl mb-6">
+          <h1 className="text-2xl font-medium mb-2">
+            Solar Savings Calculator
+          </h1>
+          <p className="text-sm text-gray-500 mt-6 w-[56%] mb-6">
             A solar savings calculator estimates how much money you can save by
             switching to solar energy. It helps you understand long-term cost
             benefits based on electricity bills, location, and system size.
@@ -20,12 +22,17 @@ const SolarSavingCalculator = () => {
               {/* Generator Details */}
               <div className="">
                 <h2 className="text-lg font-medium text-[#273e8e] mb-4">
-                  Generator Details
+                  <div className="flex items-center gap-2">
+                    <h1 className="text-xl block font-medium">
+                      Generator Details
+                    </h1>
+                    <div className="flex-1 h-px  bg-gray-400/40" />
+                  </div>
                 </h2>
 
                 <div className="space-y-4">
                   <div>
-                    <label className="block mb-1 ">
+                    <label className="block mb-2 text-[17px] ">
                       What is your current generator size?
                     </label>
                     <select className="w-full border bg-white py-4 outline-none text-lg border-gray-300 rounded-lg px-4 placeholder:text-gray-200">
@@ -34,7 +41,7 @@ const SolarSavingCalculator = () => {
                   </div>
 
                   <div>
-                    <label className="block mb-1 text-lg">
+                    <label className="block mb-2 text-[17px]">
                       Hours you run your gen/day
                     </label>
                     <input
@@ -45,7 +52,7 @@ const SolarSavingCalculator = () => {
                   </div>
 
                   <div>
-                    <label className="block mb-1 text-sm font-medium">
+                    <label className="block mb-2 text-[17px]">
                       Gen maintenance cost/month (in Naira)
                     </label>
                     <input
@@ -56,7 +63,7 @@ const SolarSavingCalculator = () => {
                   </div>
 
                   <div>
-                    <label className="block mb-1 text-sm font-medium">
+                    <label className="block mb-2 text-[17px] ">
                       Monthly Spend on grid in Naira (Optional)
                     </label>
                     <input
@@ -70,9 +77,21 @@ const SolarSavingCalculator = () => {
 
               {/* Payment Plan Details */}
 
-              <h2 className="text-lg text-[#273e8e] mb-4">
-                Troosolar Payment Plan Details
-              </h2>
+
+
+              <h2 className="text-lg font-medium text-[#273e8e] mb-4">
+                  <div className="flex items-center gap-2">
+                    <h1 className="text-xl block font-medium">
+                    Troosolar Payment Plan Details
+
+                    </h1>
+                    <div className="flex-1 h-px  bg-gray-400/40" />
+                  </div>
+                </h2>
+
+
+
+
               <div>
                 <label className="block mb-1 text-lg">
                   What is your solar budget
@@ -91,7 +110,7 @@ const SolarSavingCalculator = () => {
 
             {/* Right Result Box */}
             <div className="col-span-5">
-              <div className="relative w-[200px] mb-4">
+              <div className="relative w-[130px] mb-4">
                 <select
                   className="appearance-none w-full py-4 px-3 bg-white border border-gray-300 rounded-lg text-sm text-gray-700 outline-none"
                   name="duration"
@@ -106,20 +125,20 @@ const SolarSavingCalculator = () => {
                   <option value="24">2 Years</option>
                 </select>
                 <ChevronDown
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none"
-                  size={18}
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none"
+                  size={22}
                 />
               </div>
 
               <div className="bg-yellow-100 border-dashed border-2 border-yellow-400 py-2 px-3 font-medium rounded-xl shadow">
-                <p className="text-lg text-gray-600 mb-1">
+                <p className="text-sm py-2 text-gray-600 mb-1">
                   By going solar with Troosolar, you save
                 </p>
                 <h2 className="text-3xl font-bold py-2 text-center text-white rounded-xl bg-[#E8A91D] mb-4">
                   N1,500,000
                 </h2>
 
-                <ul className="space-y-2 text-sm">
+                <ul className="space-y-4 px-2 text-sm">
                   <li className="flex justify-between">
                     <span className=" text-[15px] font-light">
                       Total Duration
@@ -163,9 +182,11 @@ const SolarSavingCalculator = () => {
       {/* Mobile View  */}
       <div>
         <div className="min-h-screen sm:hidden block bg-[#f5f6ff] px-8">
-          <div className="flex py-4
-          ">
-            <ChevronLeft/>
+          <div
+            className="flex py-4
+          "
+          >
+            <ChevronLeft />
             <p className="absolute left-32">Solar Savings Calculator</p>
           </div>
           <h1 className="text-xl mb-2">What is a solar savings calculator ?</h1>
@@ -181,7 +202,7 @@ const SolarSavingCalculator = () => {
               {/* Generator Details */}
               <div className="">
                 <h2 className="text-lg font-medium text-[#273e8e] mb-4">
-                  <HrLine text={"Generator Details"}/>
+                  <HrLine text={"Generator Details"} />
                 </h2>
 
                 <div className="space-y-4">
@@ -232,7 +253,7 @@ const SolarSavingCalculator = () => {
               {/* Payment Plan Details */}
 
               <h2 className="text-lg text-[#273e8e] mb-4">
-                <HrLine text={"Troosolar Payment Plan Details"}/>
+                <HrLine text={"Troosolar Payment Plan Details"} />
               </h2>
               <div>
                 <label className="block mb-1 text-lg">

@@ -4,8 +4,8 @@ import {Input} from "../Input"
 
 const EditProfile = () => {
   return (
-    <div className="w-full bg-white rounded-2xl p-6 shadow-md border border-blue-500">
-      <h2 className="text-xl text-center text-gray-800 mb-6">Edit Profile</h2>
+    <div className="w-full bg-white rounded-2xl p-6 shadow-md border border-gray-300">
+      <h2 className="text-lg text-center font-medium text-gray-800 mb-6">Edit Profile</h2>
       <div className="flex flex-col items-center mb-6">
         <div className="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center text-xl font-bold text-gray-400">
           QA

@@ -4,7 +4,7 @@ import LoanWallet from "../Component/LoanWallet";
 import SmallBoxes from "../Component/SmallBoxes";
 import ShoppingWallet from "../Component/ShoppingWallet";
 import SideBar from "../Component/SideBar";
-import SolarBundle from "../Component/SolarBundleComponent";
+// import SolarBundle from "../Component/SolarBundleComponent";
 import TopNavbar from "../Component/TopNavbar";
 import { Bell } from "lucide-react";
 import Product from "../Component/Product";
@@ -17,7 +17,8 @@ const Home = ({}) => {
     <div className="flex min-h-screen w-full">
       <SideBar />
       {/* Main Content */}
-      <div className="w-full sm:w-[calc(100%-250px)]">
+      <div className="flex-grow w-1/2">
+      <div>
         {/* Topbar */}
         <div className="sm:block hidden">
           <TopNavbar />
@@ -143,6 +144,7 @@ const Home = ({}) => {
           </div>
 
         </div>
+      </div>
       </div>
     </div>
   );

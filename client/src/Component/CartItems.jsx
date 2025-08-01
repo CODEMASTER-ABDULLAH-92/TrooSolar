@@ -14,10 +14,10 @@ const CartItems = ({ itemId, name, price, image, showControls = true }) => {
         </div>
 
         {/* Product Details */}
-        <div className="flex-1 flex flex-col justify-between">
-          <div className="space-y-1">
-            <h2 className="text-lg sm:text-xl">{name}</h2>
-            <p className="text-xl font-bold text-[#273e8e]">N{price}</p>
+        <div className="flex-1 flex flex-col g justify-between">
+          <div className="space-y-2">
+            <h2 className="text-lg sm:text-[15px]">{name}</h2>
+            <p className="text-[16px] font-medium text-[#273e8e]">N{price}</p>
           </div>
 
           {/* Controls */}
@@ -32,9 +32,9 @@ const CartItems = ({ itemId, name, price, image, showControls = true }) => {
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => removeToCart(itemId)}
-                  className="h-10 w-10 flex items-center justify-center bg-[#273e8e] rounded-md text-white hover:bg-[#1f2f6e] transition"
+                  className="h-7 w-7 flex items-center justify-center bg-[#273e8e] rounded-md text-white hover:bg-[#1f2f6e] transition"
                 >
-                  <Minus />
+                  <Minus  size={16}/>
                 </button>
 
                 {/* ✅ Display Quantity */}
@@ -42,9 +42,9 @@ const CartItems = ({ itemId, name, price, image, showControls = true }) => {
 
                 <button
                   onClick={() => addToCart(itemId)}
-                  className="h-10 w-10 flex items-center justify-center bg-[#273e8e] rounded-md text-white hover:bg-[#1f2f6e] transition"
+                  className="h-7 w-7 flex items-center justify-center bg-[#273e8e] rounded-md text-white hover:bg-[#1f2f6e] transition"
                 >
-                  <Plus />
+                  <Plus size={16} />
                 </button>
               </div>
             </div>

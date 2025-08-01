@@ -3,6 +3,7 @@ import userImage from "../assets/userImage.png";
 import telegram from "../assets/telegram.svg";
 import solarInverted from "../assets/solarInverted.svg";
 import solar1 from "../assets/solar1.svg";
+import solarProject from "../assets/solarProject.svg";
 import solar from "../assets/solar.svg";
 import support from "../assets/support.svg";
 import kwc from "../assets/kwc.svg";
@@ -69,7 +70,7 @@ import product from "../assets/product.png";
 
 export const assets = {product,star1,star2,uploadArea, LoanBox,creditNeedle,house1,house2,house3,house4,
   battery,solar,bulb,inverter,mttp,solarfan,surge,connector,light,kwc,support,
-    insta, smLogo, sale, vec1, vec2, vec3, vec4, greenTick, b1, b2,line,stars,
+    insta, smLogo, sale, vec1, vec2, vec3, vec4, greenTick, b1, b2,line,stars,solarProject,
     loginImage, logout, logo, store, loans, userGear, window,solar,userImage,
     shopping, GearSix, sidebar, twitter, whatsApp, yt, loginImageForSm,telegram,
     dashboard, usermgt, creditMgt, Loanmgt, loansDisbursement, Transactions,

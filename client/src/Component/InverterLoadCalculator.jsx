@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Minus, Plus, Search } from "lucide-react";
 import { assets } from "../assets/data";
-
+import { Link } from "react-router-dom";
 const InverterLoadCalculator = () => {
   // Sample appliance data
   const applianceList = [
@@ -67,35 +67,36 @@ const InverterLoadCalculator = () => {
     <div className="min-h-screen sm:block hidden bg-[#f5f6ff] px-10 py-6">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-[#273e8e]">Inverter Load Calculator</h1>
+        <h1 className="text-2xl font-medium]">Inverter Load Calculator</h1>
         <p className="text-gray-500 mt-2 max-w-2xl text-base">
           Estimate total power needs to select a suitable inverter and battery size for efficient backup.
         </p>
       </div>
 
       {/* Main Grid */}
-      <div className="grid grid-cols-12 gap-6 w-full">
+      <Link to="/" className="text-[#273e8e] underline text-left">Go Back</Link>
+      <div className="grid grid-cols-12 gap-6 w-full mt-4">
         {/* Room Options */}
         <div className="col-span-2 flex flex-col gap-4">
           {houseData.map((house) => (
             <div
               key={house.id}
-              className="bg-white p-4 flex flex-col justify-center items-center h-[130px] rounded-2xl border-2 border-[#273e8e] hover:shadow-md cursor-pointer transition"
+              className="bg-white p-4 flex flex-col justify-center items-center h-[110px] w-[110px] rounded-2xl border-2 border-[#273e8e] shadow-2xl cursor-pointer transition"
             >
               <img src={house.image} alt={house.name} className="w-8 h-8 object-contain" />
-              <p className="mt-2 text-sm font-medium text-gray-700">{house.name}</p>
+              <p className="mt-2 text-xs font-medium text-gray-700">{house.name}</p>
             </div>
           ))}
         </div>
 
         {/* Appliance Table */}
-        <div className="col-span-7 space-y-4">
+        <div className="col-span-6 space-y-4">
           {/* Search */}
           <div className="flex items-center w-full border-2 border-gray-300 rounded-xl bg-white px-4 py-3">
             <Search className="text-gray-400 w-6 h-6 mr-3" />
             <input
               type="text"
-              className="w-full outline-none text-xl bg-transparent placeholder:text-gray-400"
+              className="w-full outline-none text-[16px] bg-transparent placeholder:text-gray-400"
               placeholder="Search appliances"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -103,7 +104,7 @@ const InverterLoadCalculator = () => {
           </div>
 
           {/* Table Headers */}
-          <div className="grid grid-cols-5 font-medium text-gray-700 text-center">
+          <div className="grid grid-cols-5 text-[13px] text-gray-700 text-center">
             <p>Appliance</p>
             <p>Power (W)</p>
             <p>Quantity</p>
@@ -146,7 +147,8 @@ const InverterLoadCalculator = () => {
                     type="number"
                     value={item.hours}
                     onChange={(e) => updateHours(index, parseInt(e.target.value) || 0)}
-                    className="w-16 mx-auto px-2 py-1 text-center border rounded bg-gray-100"
+                    placeholder="Hours"
+                    className="w-16 mx-auto px-2 py-1 text-center outline-none rounded bg-gray-100 text-gray-500"
                   />
                 </div>
               );
@@ -155,11 +157,11 @@ const InverterLoadCalculator = () => {
         </div>
 
         {/* Summary Box */}
-        <div className="col-span-3">
-          <div className="bg-[#273e8e] text-white rounded-2xl px-2 py-6 flex  gap-4 shadow-lg">
-            <h2 className="text-xl font-semibold w-[40%] text-center">Total Output</h2>
-            <div className="bg-white h-[80px] w-[60%] rounded-xl px-1 flex justify-center items-center gap-2 text-[#273e8e] shadow-inner">
-              <span className="text-4xl font-bold">{totalOutput}</span>
+        <div className="col-span-4">
+          <div className="bg-[#273e8e] text-white rounded-2xl px-1 py-2 flex justify-center items-center  gap-4 shadow-lg">
+            <h2 className="text-xl font-medium w-[50%] text-center">Total Output</h2>
+            <div className="bg-white h-[60px] w-[50%] rounded-xl px-1 flex justify-center items-center gap-2 text-[#273e8e]">
+              <span className="text-2xl font-medium">{totalOutput}</span>
               <span className="text-lg">Watt</span>
             </div>
           </div>

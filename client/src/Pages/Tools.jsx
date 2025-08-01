@@ -41,11 +41,11 @@ const Navbar = ({ activeTool, setActiveTool }) => {
         <div
           key={tool.id}
           onClick={() => setActiveTool(tool.id)}
-          className="cursor-pointer flex flex-col justify-center items-center gap-1"
+          className="cursor-pointer  flex flex-col justify-center items-center gap-2"
         >
           <div className="flex justify-center items-center gap-2">
             <img src={tool.icon} alt={tool.label} />
-            <p className="text-end mt-1">{tool.label}</p>
+            <p className="text-end mt-1 text-[15px]">{tool.label}</p>
           </div>
           <div
             className={`w-[100px] h-2 rounded-full ${
@@ -71,16 +71,13 @@ const Tools = () => {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        {/* <TopNavbar /> */}
-        <div className="flex flex-col gap-6 flex-1">
+        <TopNavbar />
+        <div className="flex flex-col  flex-1">
           <Navbar activeTool={activeTool} setActiveTool={setActiveTool} />
           {selectedTool?.component}
         </div>
       </div>
     </div>
-
-    {/* Mobile View  */}
-<SmallBoxes/>
     </>
   );
 };
