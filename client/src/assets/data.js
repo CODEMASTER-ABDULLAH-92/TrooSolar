@@ -24,7 +24,7 @@ import userGear from "../assets/UserGear.png";
 import window from "../assets/window.png";
 import shopping from "../assets/shopping.png";
 import GearSix from "../assets/GearSix.png";
-import LoanBox from "../assets/LoanBox.svg";
+import LoanBox from "../assets/loanBox.svg";
 import smLogo from "../assets/smLogo.png";
 import sidebar from "../assets/sidebar.png";
 import yt from "../assets/yt.png";
