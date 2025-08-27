@@ -54,7 +54,7 @@ import ShopMgt from "../assets/ShopMgt.svg";
 import referral from "../assets/referral.svg";
 import analytics from "../assets/analytics.svg";
 import settings from "../assets/setting.svg";
-import UserGear from "../assets/UserGear.svg";
+import UserGear1 from "../assets/UserGear.svg";
 import cart from "../assets/cart.svg";
 
 import battery from "../assets/battery.svg";
@@ -71,10 +71,10 @@ import product from "../assets/product.png";
 export const assets = {product,star1,star2,uploadArea, LoanBox,creditNeedle,house1,house2,house3,house4,
   battery,solar,bulb,inverter,mttp,solarfan,surge,connector,light,kwc,support,
     insta, smLogo, sale, vec1, vec2, vec3, vec4, greenTick, b1, b2,line,stars,solarProject,
-    loginImage, logout, logo, store, loans, userGear, window,solar,userImage,
+    loginImage, logout, logo, store, loans, userGear, window,userImage,
     shopping, GearSix, sidebar, twitter, whatsApp, yt, loginImageForSm,telegram,
     dashboard, usermgt, creditMgt, Loanmgt, loansDisbursement, Transactions,
-    balance, ShopMgt, referral, analytics, settings, UserGear,cart,rePayIcon,solarInverted,solar1
+    balance, ShopMgt, referral, analytics, settings, UserGear1,cart,rePayIcon,solarInverted,solar1
 };
 
 
