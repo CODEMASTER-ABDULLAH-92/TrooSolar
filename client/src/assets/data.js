@@ -20,7 +20,7 @@ import whatsApp from "../assets/whatsApp.png";
 import store from "../assets/store.png";
 import creditNeedle from "../assets/creditNeedle.png";
 import loans from "../assets/loan.png";
-import userGear from "../assets/userGear.png";
+import userGear from "../assets/UserGear.png";
 import window from "../assets/window.png";
 import shopping from "../assets/shopping.png";
 import GearSix from "../assets/GearSix.png";
