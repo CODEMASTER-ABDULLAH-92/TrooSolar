@@ -44,7 +44,7 @@ import light from "../assets/light.svg";
 import logout from "../assets/logout.png";
 import loginImageForSm from "../assets/loginImageForSm.jpg";
 import dashboard from "../assets/dashboard.svg";
-import usermgt from "../assets/usermgt.svg";
+import usermgt from "../assets/userMgt.svg";
 import creditMgt from "../assets/credit.svg";
 import Loanmgt from "../assets/LoanBank.svg";
 import loansDisbursement from "../assets/Loan.svg";
