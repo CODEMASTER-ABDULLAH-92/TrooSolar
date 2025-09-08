@@ -16,10 +16,10 @@ const SolarBuilder = () => {
           <div className="sm:block hidden">
             <TopNavbar />
           </div>
-          <div className="bg-[#F5F7FF] p-5 flex justify-between items-start gap-5">
+          <div className="bg-[#F5F7FF] p-5 flex justify-between items-start sm:flex-row flex-col gap-5">
 
             {/* left section */}
-            <div className="w-1/2">
+            <div className="sm:w-1/2 w-full ">
                 <h1 className="text-2xl font-medium">Product Builder</h1>
                 <Link to="/" className="text-blue-500 underline">Go Back</Link>
                 <div className="mt-5 bg-[#273E8E1A] w-full h-[70px] rounded-xl border-dashed border-[#273e8e] border-[2px] p-1 px-3">
@@ -48,7 +48,7 @@ const SolarBuilder = () => {
                 </div>
             </div>
             {/* Right section */}
-            <div className="w-1/2">
+            <div className="sm:w-1/2 w-full">
             <h1 className="mt-12">Order Summary</h1>
 
             <div className="bg-white rounded-2xl border-[2px] mt-2 border-gray-400/40 w-full p-2 max-h-[200px]">
@@ -75,6 +75,7 @@ const SolarBuilder = () => {
       </div>
 
             </div>
+
           </div>
         </div>
       </div>

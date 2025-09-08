@@ -36,7 +36,7 @@ const SolarBundle = () => {
         {/* Products Section */}
         <div className="px-6 py-6 w-full overflow-scroll">
           <h1 className="text-2xl font-semibold text-gray-800 mb-4">All Products</h1>
-          <div className="grid xl:grid-cols-3 lg:grid-cols-2  md:grid-cols-1 grid-cols-1 gap-12">
+          <div className="grid xl:grid-cols-3 lg:grid-cols-2  md:grid-cols-2 grid-cols-1 gap-y-10 gap-x-52">
             {solarBundleData.map((item, index) => (
               <Link key={index} to={`/productBundle/details/${item.id}`}>
                 <SolarBundleComponent
